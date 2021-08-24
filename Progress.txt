@@ -1,0 +1,25 @@
+abdel a fait structure (MVC), config (reste user.php), db sql (reste mettre entrées), (reste helper)
+marianne fait le CSS, header, footer
+giu fait le signup, user.php.
+optional: mot de passe oublié, support/mailing system (composer)
+
+controller (chacun modifie une fonction en fonction de répartition)
+models (chacun en fonction de répartition)
+views (chacun en fonction de répartition)
+chacun fait un controller, un model, un view, un C, un U, un D.
+
+Réunions:
+- meet après veille
+- drop un message sur discord en fin de journée
+- meet jeudi matin.
+
+Timing: 
+Jusque mercredi soir:
+abdel: entrées dans db, helper.php, dashboard.
+giu: signup, user.php.
+marianne: visuel de base
+frank: structure et savoir quoi appeler company page (company.php) => créer vue et modèle et adapter controller.
+
+d'ici fin de semaine, on aura le gros (giu sur les invoices, marianne sur css poussé, abdel ??)
+
+début semaine prochaine, on fait les clients.
