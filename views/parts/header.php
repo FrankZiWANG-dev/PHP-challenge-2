@@ -4,16 +4,19 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="icon" type="image/png" href="/assets/img/logo.png" />
+	<link rel="icon" type="image/png" href="logo.png" />
 	
-	<link rel="stylesheet" href="/assets/css/reset.css">
-	<link rel="stylesheet" href="/assets/css/style.css">
+	<!--<link rel="stylesheet" href="/assets/css/reset.css">
+	<link rel="stylesheet" href="/assets/css/style.css">-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 	<title>Accounting COGIP App</title>
 </head>
 <body>
 <!-- MENU -->
 <nav class="">
 	<!-- Brand -->
-	<span class="" id="logo"><a href="/index.php"><img src="/assets/img/logo.png" alt="logo"></a></span>
+	<span class="" id="logo"><a href="dashboard"><img src="logo.png" alt="logo"></a></span>
 </nav>
-<div class=""><button><a href="/assets/config/php/logout.php">Logout</a></button></div>
+<div class=""><button><a href="logout">Logout</a></button></div>

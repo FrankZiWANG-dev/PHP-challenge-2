@@ -35,6 +35,8 @@ CREATE DATABASE IF NOT EXISTS accounting_cogip
     COLLATE utf8_general_ci;
 
 
+use accounting_cogip;
+
 -- Table structure for table `invoice`
 CREATE TABLE IF NOT EXISTS `invoice` (
                                           `id` int(11) UNSIGNED NOT NULL,

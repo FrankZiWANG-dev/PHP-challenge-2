@@ -10,5 +10,5 @@
 	session_destroy ();
 	
 	// redirect to home page
-	header ('location: ../../../');
+	header ('location: dashboard');
 
