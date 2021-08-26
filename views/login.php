@@ -24,7 +24,7 @@
 <body>
 <section id="banner">
 	<div id="title" class="title-section">
-		<h1 class="fs-16">Abdelilah : Junior Developer at BECODE</h1>
+		<h1 class="fs-16">COGIP</h1>
 		<hr />
 	</div>
 </section>
@@ -55,7 +55,7 @@
 					<a href="reset_password.php">Forgot your password?</a>
 				</div>
 				
-				<input class="mt-24" type="submit" id="btn-login" name="btn-login" value="Login">
+				<input class="mt-24" type="submit" id="btn-login" name="btn-login">
 				
 				<div class="error mt-16"><?php if(isset($error)) { echo $error; } ?></div>
 			</form>

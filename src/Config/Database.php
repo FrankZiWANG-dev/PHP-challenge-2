@@ -4,8 +4,8 @@
 	{
 		private string $host = 'localhost';
 		private string $dbname = 'accounting_cogip';
-		private string $login = 'admin';
-		private string $password = 'admin';
+		private string $login = 'root';
+		private string $password = 'root';
 		
 		public function __construct() {  }
 		

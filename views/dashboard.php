@@ -96,5 +96,10 @@
 	</div>
 </section>
 <div style="margin-top:1rem">
+<?php
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
+?>
 <?php require 'views/parts/footer.php'; ?>
 </div>

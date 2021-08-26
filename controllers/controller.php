@@ -10,7 +10,7 @@
 		
 		public function dashboard() {
 			session_start ();
-			if (!isset($_SESSION['login'])) {
+			if (!isset($_SESSION['username'])) {
 				header("location: login");
 				exit();
 			}
@@ -31,7 +31,7 @@
 				$edit_delete = "class='invisible'";
 				$create 		= "class='invisible'";
 			}
-			echo ("Hi ".$_SESSION['login']."\n");
+			echo ("Hi ".$_SESSION['username']."\n");
 			include_once "views/dashboard.php";
 		}
 		
