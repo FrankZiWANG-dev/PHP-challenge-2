@@ -1,121 +1,34 @@
 <?php
+	require_once 'src/Router/Router.php';
+	require_once "controllers/controller.php";
 	
-	session_start();
-	if(!isset($_GET["page"])) {
-		$_GET["page"]="";
-	}
 	
-	switch ($_GET["page"]) {
-		
-		/*case 'person_detail':
-			require "controllers/controller.php";
-			personDetailPage();
-			break;*/
-		case 'invoice':
-			require "controllers/controller.php";
-			invoicePage();
-			break;
-		/*
-		case 'add_invoice':
-			require "controllers/controller.php";
-			addInvoicePage();
-			break;
-			
-		case 'update_invoice':
-			require "controllers/controller.php";
-			updateInvoicePage();
-			break;
-			
-		case 'delete_invoice':
-			require "controllers/controller.php";
-			deleteInvoicePage();
-			break;
-			
-		case 'invoice_detail':
-			require "controllers/controller.php";
-			detailInvoicePage();
-			break;*/
-			
-		/*case 'company':
-			require "controllers/controller.php";
-			companyPage();
-			break;
-		
-		case 'company_detail':
-			require "controllers/controller.php";
-			detailCompanyPage();
-			break;*/
-		
-		case 'admin':
-			
-			switch ($_GET["action"]){
-				case 'add_person':
-					require "controllers/controller.php";
-					addPersonPage();
-					break;
-				/*
-				case 'update_person':
-					require "controllers/controller.php";
-					updatePersonPage();
-					break;
-				
-				case 'delete_person':
-					require "controllers/controller.php";
-					deletePersonPage();
-					break;
-				
-				case 'add_invoice':
-					require "controllers/controller.php";
-					addInvoicePage();
-					break;
-				
-				case 'update_invoice':
-					require "controllers/controller.php";
-					updateInvoicePage();
-					break;
-				
-				case 'delete_invoice':
-					require "controllers/controller.php";
-					deleteInvoicePage();
-					break;
-				
-				case 'add_company':
-					require "controllers/controller.php";
-					addCompanyPage();
-					break;
-				
-				case 'update_company':
-					require "controllers/controller.php";
-					updateCompanyPage();
-					break;
-				
-				case 'delete_company':
-					require "controllers/controller.php";
-					deleteCompanyPage();
-					break;*/
-			}
-			break;
-		/*
-		case 'client':
-			require "controllers/controller.php";
-			clientsPage();
-			break;
-		
-		case 'provider':
-			require "controllers/controller.php";
-			providersPage();
-			break;
-		
-		case 'dashboard':
-			require "controllers/controller.php";
-			dashboard();
-			break;
-		*/
-		default:
-			require "controllers/controller.php";
-			if (isset($_SESSION['role'])) {
-				dashboard();
-			} else { loginPage(); }
-			
-			break;
-	}
+	//$controller = new Controller();
+	$router = new Router($_GET['url']);
+	
+	$router->get('/', function() { $controller = new Controller(); $controller->dashboard(); });
+	$router->get('/dashboard', function() { $controller = new Controller(); $controller->dashboard(); });
+	$router->get('/login', function() { $controller = new Controller(); $controller->login(); });
+	$router->get('/logout', function() { $controller = new Controller(); $controller->logout(); });
+	$router->get('/posts', function() { echo 'Tous les articles'; });
+	$router->get('/posts/:slug-:id', function($slug,$id) { echo "Article $slug : $id"; });
+	$router->get('/posts/:id', function($id) {
+	?>
+		<form method="post" action="">
+			<input type="text" name="name">
+			<button type="submit">Envoyer</button>
+		</form>
+	<?php
+	});
+	$router->post('/posts/:id', function($id) { echo 'Poster l\'article ' . $id . '<pre>' . print_r($_POST,true) . '</pre>'; });
+	$router->post('/login', function() {
+	    //echo '<pre>' . print_r($_POST,true) . '</pre>';
+	    include_once "src/Auth/login.php";
+	});
+	
+	//try {
+		$router->run();
+	//} catch (RouterException $e) {
+	//    echo $e->getMessage();
+	//}
+

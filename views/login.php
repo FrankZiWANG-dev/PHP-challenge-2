@@ -1,3 +1,9 @@
+
+<?php
+  //const ROOT_PATH = '/opt/lampp/htdocs/projects/php/oop/PHPcogip';
+  //require ROOT_PATH.'/assets/config/php/login.php'
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +13,8 @@
 	<title>Identification</title>
 	<meta name="description" content="Hiking services">
 	
-	<link rel="stylesheet" href="../assets/css/reset.css" type="text/css">
-	<link rel="stylesheet" href="../assets/css/style.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/reset.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
 	
 	<!--<script type="text/javascript">
 			window.history.forward();
@@ -30,13 +36,13 @@
 	</section>
 	<section class="frm-layout">
 		<div id="login-request">
-			<form name="frm-login" id="frm-login"  action="../assets/config/php/login.php" method="POST">
+			<form name="frm-login" id="frm-login"  action="" method="POST">
 				<p class="mandatory">[ <span class="red">*</span> Indicates mandatory fields ]</p>
 				<div class="mt-24">
-					<label for="username">User name</label><span class="red">*</span>
-					<input type="text" class="form-control" id="username" name="username" placeholder="user name"
-								 value="<?php if(isset($_POST['login'])){ echo htmlentities($_POST['login']);}?>"
-					>
+					<label for="login">Login</label><span class="red">*</span>
+					<input type="text" class="form-control" id="login" name="login" placeholder="login">
+								 <!--value="</?php if(isset($_POST['login'])){ echo htmlentities($_POST['login']);}?>"
+					>-->
 				</div>
 				<div>
 					<label for="password">Password</label><span class="red">*</span>
