@@ -1,4 +1,9 @@
+<div style="margin-bottom:1rem">
 <?php require 'views/parts/header.php'; ?>
+</div>
+<style>
+    .invisible { display: none; }
+</style>
 <section>
 	<div class="">
 		<div class="">
@@ -25,13 +30,18 @@
 						<th>Country</th>
                         <th>Vat</th>
 						<th>Type</th>
-						<th colspan="2" <?=$editDelete?>></th>
+						<th colspan="2" <?=$edit_delete?> ></th>
 					</tr>
+                  <?php  //echo '<pre>' . print_r($companies, true) . '</pre>' ?>
 					<?php foreach ($companies as $key => $value) { ?>
+											<?php  //echo '<pre>' . print_r($value, true) . '</pre>' ?>
 						<tr>
-							<td><a href="?page=company_detail&id=<?=$value['id']?>"><?= $value['name']?></a></td>
-							<td <?=$editDelete?>><a href="?page=admin&action=update_company&id=<?=$value['id']?>"><i class="fas fa-edit"></i></a></td>
-							<td <?=$editDelete?>><a href="?page=admin&admin=delete_company&id=<?=$value['id']?>"><i class="fas fa-trash"></i></a></td>
+							<td><a href="company_detail&id=<?=$value['id']?>"><?= $value['name']?></a></td>
+                            <td><?= $value['country']?></td>
+                            <td><?= $value['vat']?></td>
+                            <td><?= $value['type']?></td>
+							<td <?=$edit_delete?>><a href="admin&action=update_company&id=<?=$value['id']?>"><i class="fa fa-edit"></i></a></td>
+							<td <?=$edit_delete?>><a href="admin&admin=delete_company&id=<?=$value['id']?>"><i class="fa fa-trash"></i></a></td>
 						</tr>
 					<?php } ?>
 				</table>
@@ -44,23 +54,21 @@
 						<th>Number</th>
 						<th>Date</th>
 						<th>Company</th>
-						<th colspan="2" <?=$editDelete?>></th>
+						<th colspan="2" <?=$edit_delete?>></th>
 					</tr>
 					<?php foreach ($invoices as $key => $value) { ?>
 						<tr>
-							<td><?= $value['number']?></td>
+							<td><a href="invoice_detail&number=<?=$value['number']?>"><?= $value['number']?></a></td>
 							<td><?= $value['date']?></td>
-							<td>
-								<a href="?page=invoice_detail&number=<?=$value['number']?>"><?= $value['number']?></a>
-							</td>
 							<td><?= $value['name']?></td>
-							<td <?=$editDelete?>><a href="?page=admin&action=update_invoice&number=<?=$value['number']?>"><i class="fas fa-edit"></i></a></td>
-							<td <?=$editDelete?>><a href="?page=admin&action=delete_invoice&number=<?=$value['number']?>" target="blank" meta="refresh"><i class="fas fa-trash"></i></a></td>
+							<td <?=$edit_delete?>><a href="admin&action=update_invoice&number=<?=$value['number']?>"><i class="fa fa-edit"></i></a></td>
+							<td <?=$edit_delete?>><a href="admin&action=delete_invoice&number=<?=$value['number']?>" target="blank" meta="refresh"><i class="fa fa-trash"></i></a></td>
 						</tr>
 					<?php } ?>
 				</table>
 			</div>
 			<div>
+                <h1><a href="persons">Persons</a></h1>
 				<table>
 					<caption>List of last five persons</caption>
 					<tr>
@@ -68,7 +76,7 @@
 						<th>Firstname Lastname</th>
 						<th class="">E-mail</th>
 						<th>Company</th>
-						<th colspan="2" <?=$editDelete?>></th>
+						<th colspan="2" <?=$edit_delete?>></th>
 					</tr>
 					<?php foreach ($persons as $key => $value) { ?>
 						<tr>
@@ -78,8 +86,8 @@
 							</td>
 							<td class=""><?= $value['email']?></td>
 							<td><?= $value['name']?></td>
-							<td <?=$editDelete?>><a href="?page=admin&action=update_person&id=<?=$value['id']?>"><i class="fas fa-edit"></i></a></td>
-							<td <?=$editDelete?>><a href="?page=admin&action=delete_person&id=<?=$value['id']?>" target="blank" meta="refresh"><i class="fas fa-trash"></i></a></td>
+							<td <?=$edit_delete?>><a href="?page=admin&action=update_person&id=<?=$value['id']?>"><i class="fa fa-edit"></i></a></td>
+							<td <?=$edit_delete?>><a href="?page=admin&action=delete_person&id=<?=$value['id']?>" target="blank" meta="refresh"><i class="fa fa-trash"></i></a></td>
 						</tr>
 					<?php } ?>
 				</table>
@@ -87,4 +95,6 @@
 		</div>
 	</div>
 </section>
+<div style="margin-top:1rem">
 <?php require 'views/parts/footer.php'; ?>
+</div>

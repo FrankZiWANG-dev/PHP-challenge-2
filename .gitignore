@@ -2,3 +2,6 @@
 composer.phar
 .DS_Store
 assets/.DS_Store
+cogip.sql
+person.php
+PersonModel.php
