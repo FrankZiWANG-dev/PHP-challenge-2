@@ -8,18 +8,17 @@ models (chacun en fonction de répartition)
 views (chacun en fonction de répartition)
 chacun fait un controller, un model, un view, un C, un U, un D.
 
-Réunions:
-- meet après veille
-- drop un message sur discord en fin de journée
-- meet jeudi matin.
-
-Timing: 
-Jusque mercredi soir:
-abdel: entrées dans db, helper.php, dashboard.
-giu: signup, user.php.
-marianne: visuel de base
-frank: structure et savoir quoi appeler company page (company.php) => créer vue et modèle et adapter controller.
 
 d'ici fin de semaine, on aura le gros (giu sur les invoices, marianne sur css poussé, abdel ??)
 
 début semaine prochaine, on fait les clients.
+
+Progrès:
+
+Abdel: (a fait: bdd, architecture, router, classe controller, dashboard, boutons add du dashboard)
+ doit finir update et delete buttons pour les trois catégories du dashboard.
+Giuseppe: (a fait la classe user et le login), doit finit user et entamer page invoices
+Marianne: (a fait le mockup du site, nav et footer en html), va réfléchir aux choix css
+Frank: (a coordonné, planifié et animé les réunions, a réparti les tâches, a fait le html company), doit bugfix company et entamer les company details.
+
+Réunion: meet lundi matin (pour refaire le point), rdv habituel à 14h.
