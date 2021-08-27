@@ -79,6 +79,12 @@
             }
 		}
 
+		public function displayUsers($pdo){
+            $log = $pdo->prepare("SELECT * FROM user");
+            $log->execute();
+            $user = $log->fetch();
+        }
+
         public function register(array $form_vars = array())
         {
             // TODO: Implement register() method.

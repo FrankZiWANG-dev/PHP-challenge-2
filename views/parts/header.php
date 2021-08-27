@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="icon" type="image/png" href="logo.png" />
+	<link rel="icon" type="image/png" href="assets\img\logo cogip2.png" />
 	
 	<!--<link rel="stylesheet" href="/assets/css/reset.css">
 	<link rel="stylesheet" href="/assets/css/style.css">-->
@@ -17,6 +17,6 @@
 <!-- MENU -->
 <nav class="">
 	<!-- Brand -->
-	<span class="" id="logo"><a href="dashboard"><img src="logo.png" alt="logo"></a></span>
+	<span class="" id="logo"><a href="dashboard"><img src="assets\img\logo cogip2.png" alt="logo"></a></span>
 </nav>
 <div class=""><button><a href="logout">Logout</a></button></div>

@@ -7,7 +7,7 @@
 		private string $login = 'root';
 		private string $password = 'root';
 		
-		public function __construct() {  }
+		// public function __construct() {  }
 		
 		function connect() {
 			try {

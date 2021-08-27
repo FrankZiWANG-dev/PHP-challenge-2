@@ -8,6 +8,7 @@
 	
 	$router->get('/', function() { $controller = new Controller(); $controller->dashboard(); });
 	$router->get('/dashboard', function() { $controller = new Controller(); $controller->dashboard(); });
+	$router->get('/users', function() { $controller = new Controller(); $controller->users(); });
 	$router->get('/login', function() { $controller = new Controller(); $controller->login(); });
 	$router->get('/logout', function() { $controller = new Controller(); $controller->logout(); });
 	$router->get('/posts', function() { echo 'Tous les articles'; });

@@ -52,8 +52,33 @@
 			//$getCompany = getCompanyName();
 			//require "views/admin/person.php";
 		}
-		
-	}
+
+        public function users()
+        {
+            session_start ();
+            if (!isset($_SESSION['username'])) {
+                header("location: login");
+                exit();
+            }
+            require_once 'src/Auth/User.php';
+
+//            if($_SESSION['role'] == 'admin') {
+//                $edit_delete = "";
+//                $create = "";
+//            }
+//            else if($_SESSION['role']=='moderator'){
+//                $edit_delete = "class='invisible'";
+//                $create = "";
+//            }
+//            else {
+//                $edit_delete = "class='invisible'";
+//                $create 		= "class='invisible'";
+//            }
+            echo ("Hi ".$_SESSION['username']."\n");
+            include_once "views/User_admin.vue.php";
+        }
+
+    }
 	
 	
 	/*
