@@ -1,10 +1,10 @@
 <?php
 	require_once 'models/models.php';
-	//require_once 'views/views.php';
+	require_once 'views/views.php';
 	
 	class Controller {
 		
-		protected object $model;
+		protected $model;
 		
 		public function __construct() {}
 		
@@ -51,6 +51,13 @@
 			//$errorMessage = $data['1'];
 			//$getCompany = getCompanyName();
 			//require "views/admin/person.php";
+		}
+
+		function companyPage() {
+			$companyModel = new CompanyModel();
+			$companyView = $companyModel->getCompanies();
+		
+			include_once "views/companyView.php";
 		}
 		
 	}

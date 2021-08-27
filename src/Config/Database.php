@@ -2,10 +2,10 @@
 	
 	class Database
 	{
-		private string $host = 'localhost';
-		private string $dbname = 'accounting_cogip';
-		private string $login = 'root';
-		private string $password = 'root';
+		private $host = 'localhost';
+		private $dbname = 'accounting_cogip';
+		private $login = 'root';
+		private $password = '';
 		
 		public function __construct() {  }
 		

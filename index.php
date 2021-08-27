@@ -10,6 +10,7 @@
 	$router->get('/dashboard', function() { $controller = new Controller(); $controller->dashboard(); });
 	$router->get('/login', function() { $controller = new Controller(); $controller->login(); });
 	$router->get('/logout', function() { $controller = new Controller(); $controller->logout(); });
+	$router->get('/companies', function(){ $controller = new Controller(); $controller->companyPage();});
 	$router->get('/posts', function() { echo 'Tous les articles'; });
 	$router->get('/posts/:slug-:id', function($slug,$id) { echo "Article $slug : $id"; });
 	$router->get('/posts/:id', function($id) {
