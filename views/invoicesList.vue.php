@@ -1,4 +1,4 @@
-<?php require 'views/parts/header.php'; ?>
+<?php require_once 'views/parts/header.php'; ?>
 
 <span>
       <?=$displayBtn?>
@@ -7,11 +7,11 @@
 <table>
     <caption>List of users</caption>
     <thead>
-        <tr>
-            <th>User Name</th>
-            <th>E-mail</th>
-            <th>Role</th>
-        </tr>
+    <tr>
+        <th>User Name</th>
+        <th>E-mail</th>
+        <th>Role</th>
+    </tr>
     </thead>
     <tbody>
     <?php foreach ($usersData as $user){ ?>
@@ -22,8 +22,8 @@
             <?php
             if ($_SESSION['role'] == 'admin') {
                 echo
-                "<td><a href='updateUser&id={$user['id']}'><i class='fa fa-edit'></i></a></td>" .
-                "<td><a href='deleteUser&id={$user['id']}'><i class='fa fa-trash'></i></a></td>";
+                    "<td><a href='updateUser&id={$user['id']}'><i class='fa fa-edit'></i></a></td>" .
+                    "<td><a href='deleteUser&id={$user['id']}'><i class='fa fa-trash'></i></a></td>";
             }
             ?>
         </tr>

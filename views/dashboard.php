@@ -19,6 +19,7 @@
         <span>
           <button type="button" name="client"><a class="nav-link" href="?page=client">Client</a></button>
           <button type="button" name="provider"><a class="nav-link" href="?page=provider">Provider</a></button>
+          <button type="button" name="users"><a class="nav-link" href="users">Users</a></button>
         </span>
 				</div>
 				
@@ -47,7 +48,7 @@
 				</table>
 			</div>
 			<div>
-				<h1><a href="?page=invoice">Invoices</a></h1>
+				<h1><a href="/invoice">Invoices</a></h1>
 				<table>
 					<caption>List of last five invoices</caption>
 					<tr>
@@ -96,10 +97,5 @@
 	</div>
 </section>
 <div style="margin-top:1rem">
-<?php
-echo "<pre>";
-print_r($_SESSION);
-echo "</pre>";
-?>
 <?php require 'views/parts/footer.php'; ?>
 </div>
