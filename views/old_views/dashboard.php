@@ -1,6 +1,6 @@
-
+<div style="margin-bottom:1rem">
 <?php require 'views/parts/header.php'; ?>
-
+</div>
 <style>
     .invisible { display: none; }
 </style>
@@ -8,10 +8,9 @@
 	<div class="">
 		<div class="">
     <span>
-      <button <?=$create?> type="button" name="addInvoice"><a href="create-invoice">Add invoice</a></button>
-      <button <?=$create?> type="button" name="addCompany"><a href="create-company">Add company</a></button>
-      <button <?=$create?> type="button" name="addPerson"><a href="create-person">Add person</a></button>
-        <!--<button </?=$create?> type="button" name="dashboard"><a href="dashboard">goto dashboard</a></button>-->
+      <button <?=$create?> type="button" name="addInvoice"><a href="?page=admin&action=add_invoice">Add invoice</a></button>
+      <button <?=$create?> type="button" name="addCompany"><a href="?page=admin&action=add_company">Add company</a></button>
+      <button <?=$create?> type="button" name="addPerson"><a href="?page=admin&action=add_person">Add person</a></button>
     </span>
 		</div>
 		<div class="">
@@ -23,7 +22,7 @@
         </span>
 				</div>
 				
-				<h1><a href="?page=company">Companies</a></h1>
+				<h1><a href="../../index.php">Companies</a></h1>
 				<table >
 					<caption>List of last five companies</caption>
 					<tr>
@@ -37,12 +36,12 @@
 					<?php foreach ($companies as $key => $value) { ?>
 											<?php  //echo '<pre>' . print_r($value, true) . '</pre>' ?>
 						<tr>
-							<td><a href="edit_company/<?=$value['companyId']?>"><?= $value['name']?></a></td>
+							<td><a href="company_detail&id=<?=$value['id']?>"><?= $value['name']?></a></td>
                             <td><?= $value['country']?></td>
                             <td><?= $value['vat']?></td>
                             <td><?= $value['type']?></td>
-							<td <?=$edit_delete?>><a href="edit_company/<?=$value['companyId']?>"><i class="fa fa-edit"></i></a></td>
-							<td <?=$edit_delete?>><a href="delete_company/<?=$value['companyId']?>"><i class="fa fa-trash"></i></a></td>
+							<td <?=$edit_delete?>><a href="admin&action=update_company&id=<?=$value['id']?>"><i class="fa fa-edit"></i></a></td>
+							<td <?=$edit_delete?>><a href="admin&admin=delete_company&id=<?=$value['id']?>"><i class="fa fa-trash"></i></a></td>
 						</tr>
 					<?php } ?>
 				</table>
@@ -62,14 +61,14 @@
 							<td><a href="invoice_detail&number=<?=$value['number']?>"><?= $value['number']?></a></td>
 							<td><?= $value['date']?></td>
 							<td><?= $value['name']?></td>
-							<td <?=$edit_delete?>><a href="update_invoice/<?=$value['number']?>"><i class="fa fa-edit"></i></a></td>
-							<td <?=$edit_delete?>><a href="delete_invoice/<?=$value['number']?>" target="blank" meta="refresh"><i class="fa fa-trash"></i></a></td>
+							<td <?=$edit_delete?>><a href="admin&action=update_invoice&number=<?=$value['number']?>"><i class="fa fa-edit"></i></a></td>
+							<td <?=$edit_delete?>><a href="admin&action=delete_invoice&number=<?=$value['number']?>" target="blank" meta="refresh"><i class="fa fa-trash"></i></a></td>
 						</tr>
 					<?php } ?>
 				</table>
 			</div>
 			<div>
-                <h1><a href="persons">Persons</a></h1>
+                <h1><a href="../../index.php">Persons</a></h1>
 				<table>
 					<caption>List of last five persons</caption>
 					<tr>
@@ -83,12 +82,12 @@
 						<tr>
 							<td><?=$value['id']?></td>
 							<td>
-								<a href="edit_contact/<?=$value['id']?>"><?= $value['firstname']?> <?= $value['lastname']?></a>
+								<a href="?page=person_detail&id=<?=$value['id']?>"><?= $value['firstname']?> <?= $value['lastname']?></a>
 							</td>
 							<td class=""><?= $value['email']?></td>
 							<td><?= $value['name']?></td>
-							<td <?=$edit_delete?>><a href="edit_contact/<?=$value['id']?>"><i class="fa fa-edit"></i></a></td>
-							<td <?=$edit_delete?>><a href="delete_contact/<?=$value['id']?>" target="blank" meta="refresh"><i class="fa fa-trash"></i></a></td>
+							<td <?=$edit_delete?>><a href="?page=admin&action=update_person&id=<?=$value['id']?>"><i class="fa fa-edit"></i></a></td>
+							<td <?=$edit_delete?>><a href="?page=admin&action=delete_person&id=<?=$value['id']?>" target="blank" meta="refresh"><i class="fa fa-trash"></i></a></td>
 						</tr>
 					<?php } ?>
 				</table>
@@ -96,6 +95,11 @@
 		</div>
 	</div>
 </section>
-
+<div style="margin-top:1rem">
+<?php
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
+?>
 <?php require 'views/parts/footer.php'; ?>
-
+</div>
