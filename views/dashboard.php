@@ -18,8 +18,8 @@
 			<div>
 				<div class="">
         <span>
-          <button type="button" name="client"><a class="nav-link" href="?page=client">Client</a></button>
-          <button type="button" name="provider"><a class="nav-link" href="?page=provider">Provider</a></button>
+          <button type="button" name="client"><a class="nav-link" href="clients">Client</a></button>
+          <button type="button" name="provider"><a class="nav-link" href="providers">Provider</a></button>
         </span>
 				</div>
 				
@@ -69,9 +69,9 @@
 				</table>
 			</div>
 			<div>
-                <h1><a href="persons">Persons</a></h1>
+                <h1><a href="people">People</a></h1>
 				<table>
-					<caption>List of last five persons</caption>
+					<caption>List of last five people</caption>
 					<tr>
 						<th>Number</th>
 						<th>Firstname Lastname</th>

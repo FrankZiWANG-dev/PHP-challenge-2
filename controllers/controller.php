@@ -120,8 +120,13 @@
 			
 			include_once "views/invoice.php";
 		}
-		
-		public function addNewInvoice() {
+
+		public function companyPage() {
+			$companyModel = new CompanyModel();
+			$companyView = $companyModel->getCompanies();
+		}
+
+		public function addNewInvoice(){
 			//echo '<pre>' . print_r($_POST, true) . '</pre>';
 			if (isset($_POST['btn-create-invoice'])) {
 				
@@ -142,6 +147,14 @@
 			}
 			$this->showCreateInvoiceForm();
 		}
+
+		public function companyDetailPage() {
+			$companyDetailModel = new CompanyDetailModel();
+			$companyDetailView = $companyDetailModel->getCompanyDetail();
+			$companyInvoicesView = $companyDetailModel->getCompanyInvoices();
+			$companyContactsView = $companyDetailModel->getCompanyContacts();
+			include_once "views/companyDetailView.php";
+		}
 		
 		//Company Creation
 		private function showCreateCompanyForm() {
@@ -149,6 +162,73 @@
 			$types = $this->model->getTypes();
 			include_once "views/company.php";
 		}
+
+		public function clientsPage() {
+			$clientsModel = new ClientsModel();
+			$clientsView = $clientsModel->getClients();
+			include_once "views/clientsView.php";
+		}
+
+		public function clientsDetailPage() {
+			$clientsDetailModel = new ClientsDetailModel();
+			$clientsDetailView = $clientsDetailModel->getClientsDetail();
+			$clientsInvoicesView = $clientsDetailModel->getClientsInvoices();
+			include_once "views/clientsDetailView.php";
+		}
+
+		public function providersPage() {
+			$providersModel = new ProvidersModel();
+			$providersView = $providersModel->getProviders();
+		
+			include_once "views/providersView.php";
+		}
+
+		public function providersDetailPage() {
+			$providersDetailModel = new ProvidersDetailModel();
+			$providersDetailView = $providersDetailModel->getProvidersDetail();
+			$providersInvoicesView = $providersDetailModel->getProvidersInvoices();
+			$providersContactsView = $providersDetailModel->getProvidersContacts();
+			include_once "views/providersDetailView.php";
+		}
+
+		public function peoplePage() {
+			$peopleModel = new PeopleModel();
+			$peopleView = $peopleModel->getPeople();
+		
+			include_once "views/peopleView.php";
+		}
+
+		public function peopleDetailPage() {
+			$peopleDetailModel = new PeopleDetailModel();
+			$peopleDetailView = $peopleDetailModel->getPeopleDetail();
+			$peopleInvoicesView = $peopleDetailModel->getPeopleInvoices();
+			
+			include_once "views/peopleDetailView.php";
+		}
+	}
+	
+	
+	/*
+	function personDetailPage() {
+		require "models/...";
+		$persons = getDetailPerson();
+		require "views/personDetails.php";
+	}
+	
+	function invoicePage() {
+		require "models/invoice.php";
+		$invoices = readInvoices();
+		require "views/invoice.php";
+	}
+	
+	function invoiceDetailPage() {
+		require "models/invoice.php";
+		$invoiceDetail = invoiceDetail();
+		require "views/invoiceDetail.php";
+	}
+	
+	function dashboard() {
+		require "models/DashboardModel.php";
 		
 		public function addNewCompany() {
 			//echo '<pre>' . print_r($_POST, true) . '</pre>';

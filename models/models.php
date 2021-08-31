@@ -20,3 +20,14 @@
 	require_once 'Auth/UserModel.php';
 	//require_once 'Auth/UserInterface.php';
 	//require_once 'Auth/UserException.php';
+
+	require_once 'models/DashboardModel.php';
+	require_once 'models/PersonModel.php';
+	require_once 'models/CompanyModel.php';
+	require_once 'models/CompanyDetailModel.php';
+	require_once 'models/ClientsModel.php';
+	require_once 'models/ClientsDetailModel.php';
+	require_once 'models/ProvidersModel.php';
+	require_once 'models/ProvidersDetailModel.php';
+	require_once 'models/PeopleModel.php';
+	require_once 'models/PeopleDetailModel.php';

@@ -44,6 +44,15 @@
 	$router->get('/delete_contact/:id', "Controller#deleteContact")->with('id', '[0-9]+');
 	$router->post('/delete_contact/:id', "Controller#deleteContact")->with('id', '[0-9]+');
 	
+	//Read Companies and people
+	$router->get('/companies', function(){ $controller = new Controller(); $controller->companyPage();});
+	$router->get('/companyDetail', function(){ $controller = new Controller(); $controller->companyDetailPage();});
+	$router->get('/clients', function(){ $controller = new Controller(); $controller->clientsPage();});
+	$router->get('/clientsDetail', function(){ $controller = new Controller(); $controller->clientsDetailPage();});
+	$router->get('/providers', function(){ $controller = new Controller(); $controller->providersPage();});
+	$router->get('/providersDetail', function(){ $controller = new Controller(); $controller->providersDetailPage();});
+	$router->get('/people', function(){ $controller = new Controller(); $controller->peoplePage();});
+	$router->get('/peopleDetail', function(){ $controller = new Controller(); $controller->peopleDetailPage();});
 	
 	//$router->get('/person:id', "Controller#editPerson")->with('id', '[0-9]+');
 	
