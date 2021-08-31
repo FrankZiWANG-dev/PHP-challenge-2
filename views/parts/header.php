@@ -42,7 +42,7 @@
     <body>
     <!-- HEADER -->
     <nav class="nav-header">
-      <?php if(isset($_SESSION['login']))  { ?>
+      <?php if(isset($_SESSION['username']))  { ?>
         <span class="logo-isLogged"><a href="dashboard"><img src="assets/img/logo-cogip-2.png" width="40" height="40" alt="logo"></a></span>
         <span class="material-icons" style="color:#F4FF3A;">home</span>
         <span class="material-icons" style="color:#01D758;">paid</span>
@@ -50,7 +50,7 @@
         <span class="material-icons" style="color:#8663C7;">contact_page</span>
         <span class="material-icons" style="color:#F9A41E;">admin_panel_settings</span>
         <div class="">
-			<?php echo ("Hi ".$_SESSION['login']); ?>
+			<?php echo ("Hi ".$_SESSION['username']); ?>
             <button><a href="logout">Logout</a></button>
         </div>
 	  <?php } else { ?>
@@ -59,4 +59,3 @@
         </span>
 	  <?php }?>
     </nav>
-    

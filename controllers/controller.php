@@ -3,6 +3,7 @@
 	//require_once 'src/Helpers/Country.php';
 	//require_once 'views/views.php';
 	
+
 	//include_once 'src/Config/Database.php';
 	
 	class Controller {
@@ -39,7 +40,7 @@
 		
 		public function dashboard() {
 			session_start ();
-			if (!isset($_SESSION['login'])) {
+			if (!isset($_SESSION['username'])) {
 				header("location: login");
 				exit();
 			}
@@ -205,6 +206,147 @@
 			
 			include_once "views/peopleDetailView.php";
 		}
+
+        public function users()
+        {
+            session_start();
+            if (!isset($_SESSION['username'])) {
+                header("location: login");
+                exit();
+            }
+            require_once 'models/Auth/User.php';
+
+            $users = new User();
+            $usersData = $users->displayUsers();
+
+            if ($_SESSION['role'] == 'admin') {
+                $displayBtn = '<button><a href="newUser">Create new user</a></button>';
+            } else {
+                $displayBtn = '';
+            }
+            echo("Hi " . $_SESSION['username'] . "\n");
+            include_once "views/User_admin.vue.php";
+        }
+
+        public function newUser()
+        {
+            session_start();
+            if (!($_SESSION['role'] === 'admin')) {
+                header("location: dashboard");
+                exit();
+            }
+            require_once 'models/Auth/User.php';
+
+            $users = new User();
+            $users->newUser();
+
+
+            if ($_SESSION['role'] == 'admin') {
+                $displayBtn = '<button><a href="newUser">Create new user</a></button>';
+            } else {
+                $displayBtn = '';
+            }
+            echo("Hi " . $_SESSION['username'] . "\n");
+            include_once "views/newUser.php";
+        }
+
+        public function confirmDeleteUser()
+        {
+            session_start();
+            if (!($_SESSION['role'] === 'admin')) {
+                header("location: dashboard");
+                exit();
+            }
+            require_once 'models/Auth/User.php';
+
+            $users = new User();
+            $userData = $users->selectById();
+
+            if ($_SESSION['role'] == 'admin') {
+                $displayBtn =
+                    '<button><a href="newUser">Create new user</a></button>' .
+                    '<button><a href="users">Users</a></button>';
+            } else {
+                $displayBtn = '';
+            }
+            echo("Hi " . $_SESSION['username'] . "\n");
+            include_once "views/confirmDeleteUser.php";
+        }
+
+        public function deleteUser()
+        {
+            session_start();
+            if (!($_SESSION['role'] === 'admin')) {
+                header("location: dashboard");
+                exit();
+            }
+            require_once 'models/Auth/User.php';
+
+            $users = new User();
+            $users->deleteUser();
+
+        }
+
+        public function updateUser()
+        {
+            session_start();
+            if (!($_SESSION['role'] === 'admin' || 'moderator')) {
+                header("location: dashboard");
+                exit();
+            }
+            require_once 'models/Auth/User.php';
+
+            $user = new User();
+            $userValue = $user->selectById();
+
+            if ($_SESSION['role'] == 'admin') {
+                $displayBtn = '<button><a href="newUser">Create new user</a></button>';
+            } else {
+                $displayBtn = '';
+            }
+            echo("Hi " . $_SESSION['username'] . "\n");
+
+            $is_set =
+                isset($_POST['username']) &&
+                isset($_POST['email']) &&
+                isset($_POST['role']);
+
+            $is_not_empty =
+                !empty($_POST['username']) &&
+                !empty($_POST['email']) &&
+                !empty($_POST['role']);
+
+            if ($is_set && $is_not_empty) {
+                $userUpdate = $user->updateUser();
+            }
+
+            include_once "views/updateUser.php";
+        }
+
+        public function invoicesList()
+        {
+            session_start();
+            if (!isset($_SESSION['username'])) {
+                header("location: login");
+                exit();
+            }
+            require_once 'models/Invoices.php';
+
+            $invoices = new Invoices();
+            $invoicesList = $invoices->displayInvoices();
+            echo '<pre>';
+            print_r($invoicesList);
+            echo '</pre>';
+
+
+            if ($_SESSION['role'] == 'admin') {
+                $displayBtn = '<button><a href="newUser">Create new user</a></button>';
+            } else {
+                $displayBtn = '';
+            }
+            echo("Hi " . $_SESSION['username'] . "\n");
+            include_once "views/User_admin.vue.php";
+        }
 	}
 	
 	
@@ -359,8 +501,4 @@
 				}
 			}
 			$this->showEditContactForm($id,"delete");
-		}
-		
-		// ........ ADMIN ..........................................................................................//
-		
-	}
+		}*/

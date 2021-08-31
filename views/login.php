@@ -1,12 +1,4 @@
-    <?php require 'views/parts/header.php'; ?>
-
-    <!--<section id="banner">
-        <div id="title" class="title-section">
-            <h1 class="fs-16">Login</h1>
-            <hr />
-        </div>
-    </section>-->
-    <main class="w-25">
+      <main class="w-25">
         <section id="banner">
             <div id="title" class="title-section">
                 <h1>Login</h1>
@@ -19,18 +11,10 @@
                     <div class="mt-24">
                         <label for="login">Login</label><span class="red">*</span>
                         <input type="text" class="form-control" id="login" name="login" placeholder="login">
-                                     <!--value="</?php if(isset($_POST['login'])){ echo htmlentities($_POST['login']);}?>"
-                        >-->
                     </div>
                     <div>
                         <label for="password">Password</label><span class="red">*</span>
                         <input type="password" class="form-control" id="password" name="password" placeholder="password">
-                    </div>
-                    <div  class="mt-24">
-                        <a href="signup.php">Not a member?</a>
-                    </div>
-                    <div  class="mt-24">
-                        <a href="reset_password.php">Forgot your password?</a>
                     </div>
                     
                     <input class="mt-24" type="submit" id="btn-login" name="btn-login" value="Login">

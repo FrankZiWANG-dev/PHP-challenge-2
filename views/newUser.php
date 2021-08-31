@@ -1,7 +1,8 @@
-<button>Create new user</button>
-<button>Create new user</button>
-<button>Create new user</button>
-<button>Create new user</button>
+<?php require 'views/parts/header.php'; ?>
+
+<span>
+      <button type="button" name="users"><a class="nav-link" href="users">Users</a></button>
+</span>
 
 <form method="post">
     <label for="username">
@@ -16,9 +17,9 @@
     <label for="role">
         Role :
         <select name="role" id="role">
-            <option>Admin</option>
-            <option>Moderator</option>
-            <option>User</option>
+            <option>user</option>
+            <option>moderator</option>
+            <option>admin</option>
         </select>
     </label>
     <input type="submit" name="submit">

@@ -17,13 +17,13 @@
 	//require_once 'Person/PersonException.php';
 	//require_once 'Person/PersonInterface.php';
 	
-	require_once 'Auth/UserModel.php';
+	require_once 'Auth/User.php';
 	//require_once 'Auth/UserInterface.php';
 	//require_once 'Auth/UserException.php';
 
-	require_once 'models/DashboardModel.php';
-	require_once 'models/PersonModel.php';
-	require_once 'models/CompanyModel.php';
+	require_once 'models/Dashboard/DashboardModel.php';
+	require_once 'models/Person/PersonModel.php';
+	require_once 'models/Company/CompanyModel.php';
 	require_once 'models/CompanyDetailModel.php';
 	require_once 'models/ClientsModel.php';
 	require_once 'models/ClientsDetailModel.php';
