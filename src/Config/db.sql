@@ -22,8 +22,8 @@ SET time_zone = "+00:00";
 --
 
 -- Database relations
---    Company --- type
---    Company --- invoice
+--    CompanyModel --- type
+--    CompanyModel --- invoice
 --    People --- invoice
 --    People --- company
 
@@ -111,8 +111,8 @@ CREATE TABLE IF NOT EXISTS `person` (
 -- Content of table `person`
 --
 INSERT INTO `person` (`id`, `firstname`, `lastname`, `email`, `company_id`) VALUES
-    (1, 'Person', 'Person', 'pp@google.com', 1),
-    (2, 'Person', 'Another', 'pa@google.com', 1),
+    (1, 'PersonModelCode', 'PersonModelCode', 'pp@google.com', 1),
+    (2, 'PersonModelCode', 'Another', 'pa@google.com', 1),
     (3, 'Cedric', 'Duchmol', 'cedricduchmol@google.com', 1),
     (4, 'Angel', 'Leroi', 'angelleroi@gmail.com', 1),
     (5, 'Stephane', 'Boulanger','stephaneboulanger@gmail.com', 1),
@@ -164,7 +164,7 @@ CREATE TABLE `user` (
                         `login` varchar(30) NOT NULL,
                         `password` varchar(100) NOT NULL,
                         `email` varchar(30) NOT NULL,
-                        `role` varchar(20) NOT NULL COMMENT 'Admin/Moderator/User'
+                        `role` varchar(20) NOT NULL COMMENT 'Admin/Moderator/UserModel'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

@@ -8,6 +8,10 @@
 		protected $pdo;
 		
 		public function __construct() {
+			$this->getConnection();
+		}
+		
+		private function getConnection() {
 			$this->db = new Database();
 			$this->pdo = $this->db->connect();
 		}
