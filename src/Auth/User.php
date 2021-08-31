@@ -13,7 +13,7 @@
             return $this->login;
         }
 
-        public function setLogin($login): void
+        public function setLogin($login)
         {
             $this->login = $login;
         }
@@ -23,7 +23,7 @@
             return $this->password;
         }
 
-        public function setPassword($password): void
+        public function setPassword($password)
         {
             $this->password = $password;
         }
@@ -33,7 +33,7 @@
             return $this->email;
         }
 
-        public function setEmail($email): void
+        public function setEmail($email)
         {
             $this->email = $email;
         }
@@ -43,7 +43,7 @@
             return $this->role;
         }
 
-        public function setRole($role): void
+        public function setRole($role)
         {
             $this->role = $role;
         }
@@ -70,13 +70,13 @@
             $log = $pdo->prepare("SELECT * FROM user WHERE login = ?");
             $log->execute([$username]);
             $userExist = $log->fetch();
-
             if ($userExist) {
                 if ($userExist['login'] === $username && password_verify($password, $userExist["password"])) {
                     $this->sessionSet($userExist['login'], $userExist['role']);
-                    header ('location: /?page=dashboard');
+                    header ('location: /dashboard');
                 }
             }
+            
 		}
 
         public function register(array $form_vars = array())

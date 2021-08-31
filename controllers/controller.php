@@ -1,6 +1,6 @@
 <?php
 	require_once 'models/models.php';
-	require_once 'views/views.php';
+	// require_once 'views/views.php';
 	
 	class Controller {
 		
@@ -53,13 +53,64 @@
 			//require "views/admin/person.php";
 		}
 
-		function companyPage() {
+		public function companyPage() {
 			$companyModel = new CompanyModel();
 			$companyView = $companyModel->getCompanies();
 		
 			include_once "views/companyView.php";
 		}
+
+		public function companyDetailPage() {
+			$companyDetailModel = new CompanyDetailModel();
+			$companyDetailView = $companyDetailModel->getCompanyDetail();
+			$companyInvoicesView = $companyDetailModel->getCompanyInvoices();
+			$companyContactsView = $companyDetailModel->getCompanyContacts();
+			include_once "views/companyDetailView.php";
+		}
 		
+		public function clientsPage() {
+			$clientsModel = new ClientsModel();
+			$clientsView = $clientsModel->getClients();
+		
+			include_once "views/clientsView.php";
+		}
+
+		public function clientsDetailPage() {
+			$clientsDetailModel = new ClientsDetailModel();
+			$clientsDetailView = $clientsDetailModel->getClientsDetail();
+			$clientsInvoicesView = $clientsDetailModel->getClientsInvoices();
+			include_once "views/clientsDetailView.php";
+		}
+
+		public function providersPage() {
+			$providersModel = new ProvidersModel();
+			$providersView = $providersModel->getProviders();
+		
+			include_once "views/providersView.php";
+		}
+
+		public function providersDetailPage() {
+			$providersDetailModel = new ProvidersDetailModel();
+			$providersDetailView = $providersDetailModel->getProvidersDetail();
+			$providersInvoicesView = $providersDetailModel->getProvidersInvoices();
+			$providersContactsView = $providersDetailModel->getProvidersContacts();
+			include_once "views/providersDetailView.php";
+		}
+
+		public function peoplePage() {
+			$peopleModel = new PeopleModel();
+			$peopleView = $peopleModel->getPeople();
+		
+			include_once "views/peopleView.php";
+		}
+
+		public function peopleDetailPage() {
+			$peopleDetailModel = new PeopleDetailModel();
+			$peopleDetailView = $peopleDetailModel->getPeopleDetail();
+			$peopleInvoicesView = $peopleDetailModel->getPeopleInvoices();
+			
+			include_once "views/peopleDetailView.php";
+		}
 	}
 	
 	

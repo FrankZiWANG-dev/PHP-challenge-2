@@ -22,3 +22,23 @@ Marianne: (a fait le mockup du site, nav et footer en html), va réfléchir aux 
 Frank: (a coordonné, planifié et animé les réunions, a réparti les tâches, a fait le html company), doit bugfix company et entamer les company details.
 
 Réunion: meet lundi matin (pour refaire le point), rdv habituel à 14h.
+
+lundi matin:
+marianne aligne le nav, finit le footer, fera les links l'aprèm
+giu users quasi fini (update, message d'erreurs)
+abdel test les boutons update et delete du dashboard
+frank finit company matin, view client / provider d'ici fin de journée
+
+lundi aprèm:
+marianne continue
+abdel problème avec update et delete (erreur bind param, fonctionne pas avec execute). Tous les add fonctionnent.
+giu: testing users (fonctionnalités supplémentaires?)
+frank company, detail, client, provider
+
+mardi matin: (frank. fait: clients, providers, companies + details. A faire: +company/client/provider detail != 1 +bug clientdetailview invoices)
+A faire: invoice page + detail (giu), persons (abdel);
+mardi aprèm: merge
+
+reste à faire: invoice page (+detail), persons (update, delete, persons page, details)
+
+jeudi: déploiement
