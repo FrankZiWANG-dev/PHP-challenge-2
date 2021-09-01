@@ -20,12 +20,10 @@
         <td>VAT</td>
     </tr>
     <?php 
-        include_once "models/ClientsModel.php";
-        require_once "controllers/controller.php";
         foreach($clientsView as $client) { 
             echo "<tr>"
                 ."<td>" .$client["id"] ."</td>"
-                ."<td><a href='clientsDetail'>" .$client["name"] ."</a></td>"
+                ."<td><a href='clientsDetail/" .$client["id"] ."'>" .$client["name"] ."</a></td>"
                 ."<td>" .$client["country"] ."</td>"
                 ."<td>" .$client["vat"] ."</td></tr>";
         }

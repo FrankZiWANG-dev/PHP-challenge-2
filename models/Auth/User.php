@@ -3,7 +3,7 @@
 
 	class User
 	{
-        private Database $db;
+        private $db;
         private $pdo;
 
         public function __construct() {
@@ -44,7 +44,7 @@
             }
 		}
 
-		public function displayUsers(): bool|array
+		public function displayUsers()
         {
             $log = $this->pdo->prepare("SELECT * FROM user");
             $log->execute();

@@ -14,7 +14,7 @@ include_once "src/Config/Database.php";
 		}
 		
         private function selectPeople(){
-            $sql = "SELECT * FROM person ORDER BY lastname ASC" ;
+            $sql = "SELECT person.id, person.firstname, person.lastname, person.email, company.name FROM person INNER JOIN company ON person.company_id = company.id ORDER BY person.lastname ASC";			;
 
             $stmt = $this->pdo->prepare($sql);
 			

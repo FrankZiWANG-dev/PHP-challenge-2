@@ -23,7 +23,7 @@
         </span>
 				</div>
 				
-				<h1><a href="?page=company">Companies</a></h1>
+				<h1><a href="/companies">Companies</a></h1>
 				<table >
 					<caption>List of last five companies</caption>
 					<tr>

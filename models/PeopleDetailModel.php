@@ -13,12 +13,12 @@ include_once "src/Config/Database.php";
 			$this->pdo = $this->db->connect();
 		}
 		
-        private function selectPeopleDetail(){
-            $sql = "SELECT * FROM person WHERE id =3";
+        private function selectPeopleDetail($id){
+            $sql = "SELECT person.id, person.firstname, person.lastname, person.email, company.name FROM person INNER JOIN company ON person.company_id = company.id WHERE person.id = $id";
 
             $stmt = $this->pdo->prepare($sql);
 			
-			$stmt->execute();
+			$stmt->execute([$id]);
 			$peopleDetailView = $stmt->fetch();
 			
 			$stmt->closeCursor();
@@ -26,17 +26,17 @@ include_once "src/Config/Database.php";
             $this->peopleDetailView = $peopleDetailView;
         }
         
-		public function getPeopleDetail(){
-            $this->selectPeopleDetail();
+		public function getPeopleDetail($id){
+            $this->selectPeopleDetail($id);
             return $this->peopleDetailView;	
 		}
 
-		private function selectPeopleInvoices(){
-            $sql2 = "SELECT * FROM invoice WHERE person_id = 3 ORDER BY date ASC";
+		private function selectPeopleInvoices($id){
+            $sql2 = "SELECT * FROM invoice WHERE person_id = $id ORDER BY date ASC";
 
             $stmt2 = $this->pdo->prepare($sql2);
 			
-			$stmt2->execute();
+			$stmt2->execute([$id]);
 			$peopleInvoicesView = $stmt2->fetchAll();
 			
 			$stmt2->closeCursor();
@@ -44,9 +44,8 @@ include_once "src/Config/Database.php";
             $this->peopleInvoicesView = $peopleInvoicesView;
         }
         
-		public function getPeopleInvoices(){
-            $this->selectPeopleInvoices();
+		public function getPeopleInvoices($id){
+            $this->selectPeopleInvoices($id);
             return $this->peopleInvoicesView;	
 		}
-		
 	}

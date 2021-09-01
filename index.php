@@ -1,8 +1,9 @@
 <?php
 	require_once 'src/Router/Router.php';
 	require_once "controllers/controller.php";
-	
+
 	$router = new Router($_GET['url']);
+	
 	//$controller = new Controller();
 	
 	//$router->get('/', function() use ($controller) { $controller->dashboard(); });
@@ -36,14 +37,14 @@
 	$router->post('/delete_contact/:id', "Controller#deleteContact")->with('id', '[0-9]+');
 	
 	//Read Companies and people
-	$router->get('/companies', function(){ $controller = new Controller(); $controller->companyPage();});
-	$router->get('/companyDetail', function(){ $controller = new Controller(); $controller->companyDetailPage();});
-	$router->get('/clients', function(){ $controller = new Controller(); $controller->clientsPage();});
-	$router->get('/clientsDetail', function(){ $controller = new Controller(); $controller->clientsDetailPage();});
-	$router->get('/providers', function(){ $controller = new Controller(); $controller->providersPage();});
-	$router->get('/providersDetail', function(){ $controller = new Controller(); $controller->providersDetailPage();});
-	$router->get('/people', function(){ $controller = new Controller(); $controller->peoplePage();});
-	$router->get('/peopleDetail', function(){ $controller = new Controller(); $controller->peopleDetailPage();});
+	$router->get('/companies', "Controller#companyPage");
+	$router->get('/companyDetail/:id', "Controller#companyDetailPage")->with('id', '[0-9]+');
+	$router->get('/clients', "Controller#clientsPage");
+	$router->get('/clientsDetail/:id', "Controller#clientsDetailPage")->with('id', '[0-9]+');
+	$router->get('/providers', "Controller#providersPage");
+	$router->get('/providersDetail/:id', "Controller#providersDetailPage")->with('id', '[0-9]+');
+	$router->get('/people', "Controller#peoplePage");
+	$router->get('/peopleDetail/:id', "Controller#peopleDetailPage")->with('id', '[0-9]+');
 
     // Login
     $router->get('/login', function() { $controller = new Controller(); $controller->login(); });

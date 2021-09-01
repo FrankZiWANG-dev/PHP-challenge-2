@@ -28,10 +28,13 @@ for ($x=0, $y=1; $x<sizeof($clientsDetailView); $x++, $y++){
          ."<tr><td>Invoices: </td><td>"
             ."<table><tr><td>Number</td><td>Date</td></tr>";
    
-    foreach($clientsInvoicesView as $clientsInvoice) { 
-            echo "<tr><td>" .$clientsInvoice["number"] ."</td>"
-                ."<td>" .$clientsInvoice["date"] ."</td></tr>";
+    for ($i=0; $i<sizeof($clientsInvoicesView); $i++){
+        if ($clientsInvoicesView[$i]["person_id"]==$clientsDetailView[$x]["id"]){
+            echo "<tr><td>" .$clientsInvoicesView[$i]["number"] ."</td>"
+                ."<td>" .$clientsInvoicesView[$i]["date"] ."</td></tr>";
         }
+        
+    }
          
     echo "</table></td></tr></table>";
          

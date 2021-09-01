@@ -21,9 +21,11 @@
 	//require_once 'Auth/UserInterface.php';
 	//require_once 'Auth/UserException.php';
 
-	require_once 'models/Dashboard/DashboardModel.php';
-	require_once 'models/Person/PersonModel.php';
-	require_once 'models/Company/CompanyModel.php';
+	// require_once 'models/Dashboard/DashboardModel.php';
+	// require_once 'models/Person/PersonModel.php';
+	// require_once 'models/Company/CompanyModel.php';
+
+	require_once 'models/CompanyModel.php';
 	require_once 'models/CompanyDetailModel.php';
 	require_once 'models/ClientsModel.php';
 	require_once 'models/ClientsDetailModel.php';

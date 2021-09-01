@@ -24,7 +24,7 @@
         require_once "controllers/controller.php";
         foreach($providersView as $provider) { 
             echo "<tr>"
-                ."<td><a href='providersDetail'>" .$provider["id"] ."</a></td>"
+                ."<td><a href='providersDetail/" .$provider["id"]."'>" .$provider["id"] ."</a></td>"
                 ."<td>" .$provider["name"] ."</td>"
                 ."<td>" .$provider["country"] ."</td>"
                 ."<td>" .$provider["vat"] ."</td>"

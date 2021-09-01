@@ -25,11 +25,11 @@
         require_once "controllers/controller.php";
         foreach($peopleView as $person) { 
             echo "<tr>"
-                ."<td><a href='peopleDetail'>" .$person["id"] ."</a></td>"
+                ."<td><a href='peopleDetail/" .$person["id"] ."'>" .$person["id"] ."</a></td>"
                 ."<td>" .$person["firstname"] ."</td>"
                 ."<td>" .$person["lastname"] ."</td>"
                 ."<td>" .$person["email"] ."</td>"
-                ."<td>" .$person["company_id"] ."</td>"
+                ."<td>" .$person["name"] ."</td>"
                 ."</tr>";
         }
 

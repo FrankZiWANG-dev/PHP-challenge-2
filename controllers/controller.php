@@ -3,7 +3,6 @@
 	//require_once 'src/Helpers/Country.php';
 	//require_once 'views/views.php';
 	
-
 	//include_once 'src/Config/Database.php';
 	
 	class Controller
@@ -125,8 +124,9 @@
 		
 		public function companyPage()
 		{
-			$companyModel = new CompanyModel();
+			$companyModel = new CompanyModel2();
 			$companyView = $companyModel->getCompanies();
+			include_once "views/companyView.php";
 		}
 		
 		/* Abdelilah
@@ -154,12 +154,12 @@
 		}
 		* Abdelilah */
 		
-		public function companyDetailPage()
+		public function companyDetailPage($id)
 		{
 			$companyDetailModel = new CompanyDetailModel();
-			$companyDetailView = $companyDetailModel->getCompanyDetail();
-			$companyInvoicesView = $companyDetailModel->getCompanyInvoices();
-			$companyContactsView = $companyDetailModel->getCompanyContacts();
+			$companyDetailView = $companyDetailModel->getCompanyDetail($id);
+			$companyInvoicesView = $companyDetailModel->getCompanyInvoices($id);
+			$companyContactsView = $companyDetailModel->getCompanyContacts($id);
 			include_once "views/companyDetailView.php";
 		}
 		
@@ -180,11 +180,11 @@
 			include_once "views/clientsView.php";
 		}
 		
-		public function clientsDetailPage()
+		public function clientsDetailPage($id)
 		{
 			$clientsDetailModel = new ClientsDetailModel();
-			$clientsDetailView = $clientsDetailModel->getClientsDetail();
-			$clientsInvoicesView = $clientsDetailModel->getClientsInvoices();
+			$clientsDetailView = $clientsDetailModel->getClientsDetail($id);
+			$clientsInvoicesView = $clientsDetailModel->getClientsInvoices($id);
 			include_once "views/clientsDetailView.php";
 		}
 		
@@ -196,12 +196,12 @@
 			include_once "views/providersView.php";
 		}
 		
-		public function providersDetailPage()
+		public function providersDetailPage($id)
 		{
 			$providersDetailModel = new ProvidersDetailModel();
-			$providersDetailView = $providersDetailModel->getProvidersDetail();
-			$providersInvoicesView = $providersDetailModel->getProvidersInvoices();
-			$providersContactsView = $providersDetailModel->getProvidersContacts();
+			$providersDetailView = $providersDetailModel->getProvidersDetail($id);
+			$providersInvoicesView = $providersDetailModel->getProvidersInvoices($id);
+			$providersContactsView = $providersDetailModel->getProvidersContacts($id);
 			include_once "views/providersDetailView.php";
 		}
 		
@@ -213,11 +213,11 @@
 			include_once "views/peopleView.php";
 		}
 		
-		public function peopleDetailPage()
+		public function peopleDetailPage($id)
 		{
 			$peopleDetailModel = new PeopleDetailModel();
-			$peopleDetailView = $peopleDetailModel->getPeopleDetail();
-			$peopleInvoicesView = $peopleDetailModel->getPeopleInvoices();
+			$peopleDetailView = $peopleDetailModel->getPeopleDetail($id);
+			$peopleInvoicesView = $peopleDetailModel->getPeopleInvoices($id);
 			
 			include_once "views/peopleDetailView.php";
 		}

@@ -20,11 +20,11 @@
 include_once "models/PeopleDetailModel.php";
 require_once "controllers/controller.php";
 
-echo "<tr><td>Id: </td><td><a href='peopleDetail'>" .$peopleDetailView['id'] ."</a></td></tr>"
+echo "<tr><td>Id: </td><td>" .$peopleDetailView['id'] ."</td></tr>"
     ."<tr><td>First name: </td><td>" .$peopleDetailView['firstname'] ."</td></tr>"
     ."<tr><td>Last name: </td><td>" .$peopleDetailView['lastname'] ."</td></tr>"
     ."<tr><td>Email: </td><td>" .$peopleDetailView['email'] ."</td></tr>"
-    ."<tr><td>Company: </td><td>" .$peopleDetailView['company_id'] ."</td></tr>"
+    ."<tr><td>Company: </td><td>" .$peopleDetailView['name'] ."</td></tr>"
     ."<tr><td>Invoices: </td><td>"
     ."<table><tr><td>Number </td><td>Date </td></tr>";
     

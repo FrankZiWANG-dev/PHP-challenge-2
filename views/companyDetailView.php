@@ -15,10 +15,8 @@
 <h2> Company </h2>
 <table>
     <?php 
-        include_once "models/CompanyDetailModel.php";
-        require_once "controllers/controller.php";
-        echo "<tr><td>Name: </td><td>" .$companyDetailView["name"] ."</td></tr>"
-            ."<tr><td>VAT Number: </td><td>" .$companyDetailView["vat"] ."</td></tr>";
+        echo "<tr><td>Name: </td><td>" .$companyDetailView[0]["name"] ."</td></tr>"
+            ."<tr><td>VAT Number: </td><td>" .$companyDetailView[0]["vat"] ."</td></tr>";
     ?>
 </table>
     
@@ -26,9 +24,9 @@
 <table>
     <?php
         echo "<tr><td>Number</td><td>Date</td></tr>";
-        foreach($companyInvoicesView as $companyInvoice) { 
-                echo "<tr><td>" .$companyInvoice["number"] ."</td>"
-                    ."<td>" .$companyInvoice["date"] ."</td></tr>";
+        for ($i=0;$i<sizeof($companyInvoicesView);$i++) { 
+                echo "<tr><td>" .$companyInvoicesView[$i]["number"] ."</td>"
+                    ."<td>" .$companyInvoicesView[$i]["date"] ."</td></tr>";
             }
     ?>
 </table>
@@ -37,10 +35,10 @@
 <table>
     <?php
         echo "<tr><td>First name</td><td>Last name</td><td>Email</td></tr>";
-        foreach($companyContactsView as $companyContact) { 
-                echo "<tr><td>" .$companyContact["firstname"] ."</td>"
-                    ."<td>" .$companyContact["lastname"] ."</td>"
-                    ."<td>".$companyContact['email']."</td></tr>";
+        for ($i=0; $i<sizeof($companyContactsView); $i++) { 
+                echo "<tr><td>" .$companyContactsView[$i]["firstname"] ."</td>"
+                    ."<td>" .$companyContactsView[$i]["lastname"] ."</td>"
+                    ."<td>".$companyContactsView[$i]['email']."</td></tr>";
             }
     ?>
 </table>
