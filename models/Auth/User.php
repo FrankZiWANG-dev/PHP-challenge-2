@@ -35,12 +35,12 @@
             if ($userExist) {
                 if ($userExist['login'] === $username && password_verify($password, $userExist["password"])) {
                     $this->sessionSet($userExist['login'], $userExist['role']);
-                    header ('location: /dashboard');
+                    header ('location: dashboard');
                 }else {
-                   header ('location: /login');
+                   header ('location: login');
                 }
             }else {
-                header ('location: /login');
+                header ('location: login');
             }
 		}
 
