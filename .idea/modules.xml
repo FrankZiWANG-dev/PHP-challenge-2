@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/PHPcogip.iml" filepath="$PROJECT_DIR$/.idea/PHPcogip.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/frank.iml" filepath="$PROJECT_DIR$/.idea/frank.iml" />
     </modules>
   </component>
 </project>

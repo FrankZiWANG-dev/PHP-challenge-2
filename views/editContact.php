@@ -7,7 +7,7 @@
 <main class="">
 	<section id="">
 		<div id="title" class="">
-			<h1>Adding person</h1>
+			<h1>Updating person</h1>
 		</div>
 	</section>
 	<section class="">
