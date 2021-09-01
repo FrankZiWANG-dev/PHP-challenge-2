@@ -51,6 +51,7 @@
 			$this->invoice = new InvoiceModel();
 			$invoices = $this->invoice->getLastFiveInvoices();
 			
+			/* Lines from 55 to 64 commented by Abdelilah
 			if ($_SESSION['role'] == 'admin') {
 				$edit_delete = "";
 				$create = "";
@@ -61,6 +62,7 @@
 				$edit_delete = "class='invisible'";
 				$create = "class='invisible'";
 			}
+			* Abdelilah */
 			//echo ("Hi ".$_SESSION['login']."\n");
 			include_once "views/dashboard.php";
 		}
