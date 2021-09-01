@@ -87,7 +87,7 @@
 		 */
 		public function create(array $form_vars = array())
 		{
-			$this->checkDataSentByForm($form_vars,false);
+			$this->checkDataSentByForm($form_vars,true);
 			//attempts to create the person
 			if (!$this->addNewPerson($this->vars)) {
 				throw new PersonException("Could not create person in database, please try again later.");
@@ -161,7 +161,7 @@
 			$this->vars['lastname'] = html($form_vars['lastname']);
 			$this->vars['email'] 		= html($form_vars['email']);
 			$this->vars['company_id'] = $form_vars['company_id'];
-			$this->vars['person_id'] = $form_vars['person_id'];
+			if (!$new)  $this->vars['person_id'] = $form_vars['person_id'];
 			
 			//check if all field are not empty
 			if (!filled_out($this->vars)) {
