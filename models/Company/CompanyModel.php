@@ -161,7 +161,7 @@
 			$this->vars['country'] = $form_vars['country'];
 			$this->vars['vat'] = $form_vars['vat'];
 			$this->vars['type_id'] = $form_vars['type_id'];
-			$this->vars['company_id'] = $form_vars['company_id'];
+			if (!$new)  $this->vars['company_id'] = $form_vars['company_id'];
 			
 			//check if all field are not empty
 			if (!filled_out($this->vars)) {

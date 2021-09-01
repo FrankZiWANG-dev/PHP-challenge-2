@@ -73,9 +73,12 @@
         echo $router->url('posts.show', ['id' => 1, 'slug' => 'salut-les-gens']);
 	}, 'posts.show')->with('id', '[0-9]+')->with('slug', '[a-z\-0-9]+');
 	*/
-	$router->get('/article/:slug-:id', "Controller#show2")->with('id', '[0-9]+')->with('slug', '[a-z\-0-9]+');
-	$router->get('/article/:slug-:id/:page', "Controller#show")->with('id', '[0-9]+')->with('page', '[0-9]+')->with('slug', '[a-z\-0-9]+');
-	$router->get('/posts/:id',"Controller#showid"); //posts#show => posts controller and action=show
+	
+	// lines below (from 78 to 80) commented by Abdelilah
+	//$router->get('/article/:slug-:id', "Controller#show2")->with('id', '[0-9]+')->with('slug', '[a-z\-0-9]+');
+	//$router->get('/article/:slug-:id/:page', "Controller#show")->with('id', '[0-9]+')->with('page', '[0-9]+')->with('slug', '[a-z\-0-9]+');
+	//$router->get('/posts/:id',"Controller#showid"); //posts#show => posts controller and action=show
+	
 	//$router->get('/posts/:id',"Controller#showid"); //posts#show => posts controller and action=show
 	//, function($id) {
 	//?/>
@@ -85,7 +88,10 @@
 		//</form>-->
 	//</?php
 	//});
-	$router->post('/posts/:id', function($id) { echo 'Poster l\'article ' . $id . '<pre>' . print_r($_POST,true) . '</pre>'; });
+	
+	// line below (number 90) commented by Abdelilah
+	//$router->post('/posts/:id', function($id) { echo 'Poster l\'article ' . $id . '<pre>' . print_r($_POST,true) . '</pre>'; });
+	
 	//$router->post('/login', function() {
 	    //echo '<pre>' . print_r($_POST,true) . '</pre>';
 	  //  include_once "src/Auth/login.php";
