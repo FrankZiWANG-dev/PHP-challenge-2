@@ -430,8 +430,8 @@
 		
 		public function addNewPerson() {
 			//echo '<pre>' . print_r($_POST, true) . '</pre>';
-
-			if (isset($_POST['btn-create-person'])) {
+            session_start();
+            if (isset($_POST['btn-create-person'])) {
 				$person = new PersonModel();
 				
 				$form_vars['firstname'] = $_POST["firstname"];
@@ -463,7 +463,8 @@
 		
 		public function addNewInvoice() {
 			//echo '<pre>' . print_r($_POST, true) . '</pre>';
-			if (isset($_POST['btn-create-invoice'])) {
+            session_start();
+            if (isset($_POST['btn-create-invoice'])) {
 				
 				$invoice = new InvoiceModel();
 				
@@ -492,7 +493,8 @@
 		
 		public function addNewCompany() {
 			//echo '<pre>' . print_r($_POST, true) . '</pre>';
-			if (isset($_POST['btn-create-company'])) {
+            session_start();
+            if (isset($_POST['btn-create-company'])) {
 				
 				$company = new CompanyModel();
 				
@@ -524,6 +526,7 @@
 		
 		public function editCompany($id) {
 			//echo '<pre>' . print_r($_POST, true) . '</pre>';
+            session_start();
             if (!($_SESSION['role'] === 'admin')) {
                 header("location: ../dashboard");
                 exit();
@@ -556,7 +559,8 @@
 		// delete company
 		public function deleteCompany($id) {
 			//echo '<pre>' . print_r($_POST, true) . '</pre>';
-            if (!($_SESSION['role'] === 'admin')) {
+            session_start();
+            if (!($_SESSION['role'] == 'admin')) {
                 header("location: ../dashboard");
                 exit();
             }
@@ -591,6 +595,7 @@
 		// Update Contact
 		public function editContact($id) {
 			//echo '<pre>' . print_r($_POST, true) . '</pre>';
+            session_start();
             if (!($_SESSION['role'] === 'admin')) {
                 header("location: ../dashboard");
                 exit();
@@ -617,6 +622,7 @@
 		// delete contact
 		public function deleteContact($id) {
 			//echo '<pre>' . print_r($_POST, true) . '</pre>';
+            session_start();
             if (!($_SESSION['role'] === 'admin')) {
                 header("location: ../dashboard");
                 exit();
