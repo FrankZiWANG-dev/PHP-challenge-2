@@ -58,7 +58,7 @@ After regrouping the code, further styling was added (using CSS), the applicatio
       - Invoice creation, update and delete functionalities
     
     - Frank Zi WANG (https://github.com/FrankZiWANG-dev)
-      - Project management (standups, deadlines, workload distribution)
-      - Team management (w)
+      - Project management (standups animation, requirements management)
+      - Team management (workload distribution, deadline management)
       - Source control
-      - Companies, clients, providers display functionalities
+      - Companies, clients, providers display functionalities creation
