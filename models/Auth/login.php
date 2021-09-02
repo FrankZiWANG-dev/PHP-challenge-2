@@ -1,7 +1,7 @@
 <?php
 	session_start ();
 	require_once 'src/Config/Database.php';
-	require_once 'User.php';
+	require_once 'models/Auth/User.php';
 
 
 	//check if variables are defined
@@ -15,13 +15,10 @@
 
 	if ($is_set && $is_not_empty) {
 		try {
-            $db = new Database();
-            $pdo = $db->connect();
             $user = new User();
 			$login = $_POST['login'];
 			$password = $_POST['password'];
-            $user->login($login, $password, $pdo);
-
+            $user->login($login, $password);
 		} catch (Exception $e) {
 			$error = $e->getMessage();
 		}

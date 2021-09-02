@@ -10,7 +10,35 @@
     
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <!-- Abdelilah : add for date, please don't delete it -->
+            <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+            <link rel="stylesheet" href="/resources/demos/style.css">
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <script>
+                $( function() {
+                    $( "#invoice_date" ).datepicker({
+                        defaultDate: "",
+                        changeMonth: true,
+                        numberOfMonths: 1,
+                        dateFormat: "yy-mm-dd"
+                    });
+                } );
+    
+                function prependF(elem) {
+                    let val = elem.value;
+                    if(!val.match(/^F/)) {
+                        elem.value = "F" + val;
+                    }
+                }
+            </script>
+        <!-- Abdelilah : add for date -->
+        
+        <title>COGIP Web App</title>
+    </head>
     
     <link rel="shortcut icon" href="favicon-32x32.png">
     <link rel="stylesheet" href="assets/css/style.css">
