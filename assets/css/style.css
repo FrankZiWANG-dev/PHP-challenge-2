@@ -1,0 +1,143 @@
+
+
+h1,h2 {
+  color: #38c6f4 ;
+  font-family: 'Dosis', sans-serif;
+  text-decoration-line: underline;
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+h3 {
+  color: #38c6f4 ;
+  font-family: 'Dosis', sans-serif;
+
+}
+
+html, body {
+  padding-bottom: 1rem;
+  font-family: 'Dosis', sans-serif !important;
+  background-color: #494247 !important;
+  /*color: #494247 ;*/
+  /*text-align: left;*/
+ 
+}
+
+caption {
+  text-align: left;
+  color: #38c6f4;
+  font-size: 150%;
+  text-decoration-line: underline ;
+  padding-bottom: 25px;
+}
+
+a:link, a:hover, a:visited {
+  text-decoration: none;
+  font-size: 110%;
+  /*color:#c9d3d3;*/
+  display: inline-flex;
+  color: #c9d3d3 ;
+
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: center;
+  margin: auto;
+  width: 90%;
+
+}
+
+table, td, th {
+  /*background-color: #c9d3d3;*/
+  color:#c9d3d3 ;
+
+}
+
+td,th {
+  padding: 15px;
+  border-bottom: 2px solid #38c6f4;
+  text-align: center;
+  color: #c9d3d3 ;
+  
+}
+
+tr:hover {background-color: #38c6f4;}
+/*tr:nth-child(even) {background-color: #c9d3d3;}*/
+
+.Btn-add {
+  display: flex;
+  flex-direction:row-reverse;
+  margin-right: 80px;
+  /*align-items:flex-end;*/
+  margin-top: 70px;
+  color: #494247 !important;
+  height: 50px;
+  
+}
+
+.cl-pr {
+  display: flex;
+  flex-direction:row-reverse;
+  margin-right: 163px;
+  height: 50px;
+  color: #494247 !important;
+}
+
+.material-icons { 
+    font-size: 62px; 
+    display :inline;
+    /*padding-inline-end: 50px;
+    margin: 50px;*/
+     
+}
+
+.navheader {
+  /*text-align: left;*/
+  /*font-size: 100px;*/
+  /*margin-bottom: 100px;
+  margin-top:-20px;
+  margin-left: -20px;*/
+  display: flex; 
+  height: 280px;
+  justify-content:space-between ;
+
+}
+
+.logo {
+  margin: 5px;
+  height: 280px; 
+  
+}
+
+.form-control {
+  color:#38c6f4 ;
+}
+
+.icons {
+  color:#c9d3d3 !important;
+  display: flex;
+  flex-direction: column;
+  margin-right: 80px;
+  align-items: center;
+  margin-top: 25px;
+
+}
+
+.navfooter {
+  text-align-last: center;
+  font-size: 25px;
+  margin-top: 100px;
+  color: #3ec8f4;
+    
+}
+
+.imgfooter {
+  width: 190px !important;
+  height: 120px !important; 
+  margin: -50px;
+
+}

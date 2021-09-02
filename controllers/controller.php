@@ -31,7 +31,7 @@
 				$edit_delete = "class='invisible'";
 				$create 		= "class='invisible'";
 			}
-			echo ("Hi ".$_SESSION['username']."\n");
+			//echo ("Hi ".$_SESSION['username']."\n");
 			include_once "views/dashboard.php";
 		}
 		
@@ -74,7 +74,7 @@
 //                $edit_delete = "class='invisible'";
 //                $create 		= "class='invisible'";
 //            }
-            echo ("Hi ".$_SESSION['username']."\n");
+            //echo ("Hi ".$_SESSION['username']."\n");
             include_once "views/User_admin.vue.php";
         }
 
@@ -120,7 +120,7 @@
 			$edit_delete = "class='invisible'";
 			$create 		= "class='invisible'";
 		}
-		echo ("Hi ".$_SESSION['login']."\n");
+		//echo ("Hi ".$_SESSION['login']."\n");
 		require "views/dashboard.php";
 	}
 	

@@ -21,17 +21,8 @@
 <!-- MENU -->
 <nav class="navheader">
     <!-- Brand -->
-<a href="dashboard" class="logo"><img src="assets/img/logocogip1.png" alt="logo"></a>
-
-<a href="dashboard" class="icons"><i class="material-icons" style="color:#F4FF3A;">home</i>Home</a>
-<a href="invoice" class="icons"><i class="material-icons" style="color:#01D758;">paid</i>Invoices</a>
-<a href="company" class="icons"><i class="material-icons" style="color:#318CE7;">apartment</i>Companies</a>
-<a href="person" class="icons"><i class="material-icons" style="color:#8663C7;">contact_page</i>Contacts</a> 
-<a href="users" class="icons"><i class="material-icons" style="color:#F9A41E;">admin_panel_settings</i>Users</a>
-<a href="logout" class="icons"><i class="material-icons" style="color:#FF0921;">logout</i>Logout</a>
-
+ <span class="logologin"><a href="dashboard"><img src="assets/img/logocogip2.png" alt="logo"></a></span>
+ 
 </nav>
-<H1>
-<?php echo ("Hi ".$_SESSION['username']. " !  Are you ready for the work ? "); ?>
-</h1> 
-<h2>Where do you want to start? </h2>
+<h1>Welcome to the login area !</h1> 
+
