@@ -94,19 +94,43 @@
 
         public function displayInvoices()
         {
-            $log = $this->pdo->prepare("SELECT * FROM invoice LEFT JOIN company ON invoice.compagny_id = company.id");
+            $log = $this->pdo->prepare("SELECT invoice.id as invoice_id, number as invoice_number, date as invoice_date, name as company_name, type as company_type FROM invoice LEFT JOIN company ON invoice.company_id = company.id LEFT JOIN type ON type.id = company.type_id   ORDER BY `invoice_id` ASC");
             $log->execute();
             return $log->fetchAll();
         }
 
-//SELECT
-//	number as invoice_number,
-//	date as invoice_date,
-//    name as compagny_name
-//FROM invoice
-//INNER JOIN company
-//   ON invoice.company_id = company.id
-		
+        public function selectById()
+        {
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+                $log = $this->pdo->prepare("SELECT * FROM invoice WHERE id = ?");
+                $log->execute([$id]);
+                return $log->fetch();
+            }
+            header ('location: invoice');
+        }
+
+        public function deleteInvoice()
+        {
+            if ($_GET['id']){
+                $id = $_GET['id'];
+                $invoice = $this->pdo->prepare("DELETE FROM invoice WHERE id = ?");
+                $invoice->execute([$id]);
+            }
+            header ('location: invoice');
+        }
+
+        public function updateInvoice()
+        {
+            if (isset($_GET['id'])){
+                $id = $_GET['id'];
+
+                $invoice2 = $this->pdo->prepare("UPDATE invoice SET number = ?, date = ?, company_id = ? WHERE id = ?");
+                $invoice2->execute([$_POST['number'], $_POST['date'], $_POST['company'], $id]);
+            }
+            header ('location: invoice');
+        }
+
 		public function edit($invoice_id) {}
 		public function delete($invoice_id) {}
 		

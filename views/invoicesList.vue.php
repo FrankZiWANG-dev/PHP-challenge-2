@@ -1,29 +1,27 @@
 <?php require_once 'views/parts/header.php'; ?>
 
-<span>
-      <?=$displayBtn?>
-</span>
-
 <table>
-    <caption>List of users</caption>
+    <caption>List of invoices</caption>
     <thead>
     <tr>
-        <th>User Name</th>
-        <th>E-mail</th>
-        <th>Role</th>
+        <th>Invoice number</th>
+        <th>Invoice Date</th>
+        <th>Company name</th>
+        <th>Company type</th>
     </tr>
     </thead>
     <tbody>
-    <?php foreach ($usersData as $user){ ?>
+    <?php foreach ($invoicesList as $invoice){ ?>
         <tr>
-            <td><a href="updateUser&id=<?=$user['id']?>"><?= $user['login']?></a></td>
-            <td><?= $user['email']?></td>
-            <td><?= $user['role']?></td>
+            <td><?= $invoice['invoice_number']?></td>
+            <td><?= $invoice['invoice_date']?></td>
+            <td><?= $invoice['company_name']?></td>
+            <td><?= $invoice['company_type']?></td>
             <?php
             if ($_SESSION['role'] == 'admin') {
                 echo
-                    "<td><a href='updateUser&id={$user['id']}'><i class='fa fa-edit'></i></a></td>" .
-                    "<td><a href='deleteUser&id={$user['id']}'><i class='fa fa-trash'></i></a></td>";
+                    "<td><a href='editInvoice&id={$invoice['invoice_id']}'><i class='fa fa-edit'></i></a></td>" .
+                    "<td><a href='confirmDeleteInvoice&id={$invoice['invoice_id']}'><i class='fa fa-trash'></i></a></td>";
             }
             ?>
         </tr>
