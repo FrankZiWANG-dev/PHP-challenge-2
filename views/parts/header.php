@@ -44,7 +44,7 @@
     <nav class="nav-header">
       <?php if(isset($_SESSION['username']))  { ?>
         <span class="logo-isLogged"><a href="dashboard"><img src="assets/img/logo-cogip-2.png" width="40" height="40" alt="logo"></a></span>
-        <span class="material-icons" style="color:#F4FF3A;">home</span>
+        <a href="user"><i class="material-icons" style="color:#F4FF3A;">home</i></a>
         <span class="material-icons" style="color:#01D758;">paid</span>
         <span class="material-icons" style="color:#318CE7;">apartment</span>
         <span class="material-icons" style="color:#8663C7;">contact_page</span>

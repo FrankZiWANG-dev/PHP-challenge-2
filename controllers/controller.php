@@ -337,7 +337,71 @@
 			
 			include_once "views/updateUser.php";
 		}
-		
+
+        public function editInvoice()
+        {
+            session_start();
+            if (!($_SESSION['role'] === 'admin' || 'moderator')) {
+                header("location: dashboard");
+                exit();
+            }
+            require_once 'models/Invoice/InvoiceModel.php';
+
+            $companies = new CompanyModel();
+            $companyList = $companies->getCompanies();
+
+            $invoices = new InvoiceModel();
+            $invoicesId = $invoices->selectById();
+
+
+
+            $is_set =
+                isset($_POST['number']) &&
+                isset($_POST['date']) &&
+                isset($_POST['company']);
+
+            $is_not_empty =
+                !empty($_POST['number']) &&
+                !empty($_POST['date']) &&
+                !empty($_POST['company']);
+
+            if ($is_set && $is_not_empty) {
+                $invoiceUpdate = $invoices->updateInvoice();
+            }
+
+            include_once "views/editInvoice.php";
+        }
+
+        public function confirmDeleteInvoice()
+        {
+            session_start();
+            if (!($_SESSION['role'] === 'admin')) {
+                header("location: dashboard");
+                exit();
+            }
+            require_once 'models/Invoice/InvoiceModel.php';
+
+            $invoices = new InvoiceModel();
+            $invoicesId = $invoices->selectById();
+
+
+            include_once "views/deleteInvoice.php";
+        }
+
+        public function deleteInvoice()
+        {
+            session_start();
+            if (!($_SESSION['role'] === 'admin')) {
+                header("location: dashboard");
+                exit();
+            }
+            require_once 'models/Invoice/InvoiceModel.php';
+
+            $invoices = new InvoiceModel();
+            $invoices->deleteInvoice();
+
+        }
+
 		public function invoicesList()
 		{
 			session_start();
@@ -345,22 +409,12 @@
 				header("location: login");
 				exit();
 			}
-			require_once 'models/Invoices.php';
+			require_once 'models/Invoice/InvoiceModel.php';
 			
-			$invoices = new Invoices();
+			$invoices = new InvoiceModel();
 			$invoicesList = $invoices->displayInvoices();
-			echo '<pre>';
-			print_r($invoicesList);
-			echo '</pre>';
-			
-			
-			if ($_SESSION['role'] == 'admin') {
-				$displayBtn = '<button><a href="newUser">Create new user</a></button>';
-			} else {
-				$displayBtn = '';
-			}
-			echo("Hi " . $_SESSION['username'] . "\n");
-			include_once "views/User_admin.vue.php";
+
+			include_once "views/invoicesList.vue.php";
 		}
 	
 		// #Admin added by Abdelilah

@@ -58,7 +58,13 @@
     $router->get('/deleteUser', function() { $controller = new Controller(); $controller->deleteUser(); });
     $router->get('/updateUser', function() { $controller = new Controller(); $controller->updateUser(); });
     $router->post('/updateUser', function() { $controller = new Controller(); $controller->updateUser(); });
+
+    // Invoices
     $router->get('/invoice', function() { $controller = new Controller(); $controller->invoicesList(); });
+    $router->get('/editInvoice', function() { $controller = new Controller(); $controller->editInvoice(); });
+    $router->post('/editInvoice', function() { $controller = new Controller(); $controller->editInvoice(); });
+    $router->get('/confirmDeleteInvoice', function() { $controller = new Controller(); $controller->confirmDeleteInvoice(); });
+    $router->get('/deleteInvoice', function() { $controller = new Controller(); $controller->deleteInvoice(); });
 
 
 //$router->get('/person:id', "Controller#editPerson")->with('id', '[0-9]+');
