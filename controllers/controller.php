@@ -50,7 +50,7 @@
 			$this->invoice = new InvoiceModel();
 			$invoices = $this->invoice->getLastFiveInvoices();
 			
-			/* Lines from 55 to 64 commented by Abdelilah
+			/* Lines from 55 to 64 commented by Abdelilah*/
 			if ($_SESSION['role'] == 'admin') {
 				$edit_delete = "";
 				$create = "";
@@ -61,7 +61,7 @@
 				$edit_delete = "class='invisible'";
 				$create = "class='invisible'";
 			}
-			* Abdelilah */
+			/* Abdelilah */
 			//echo ("Hi ".$_SESSION['login']."\n");
 			include_once "views/dashboard.php";
 		}
@@ -239,7 +239,7 @@
 			} else {
 				$displayBtn = '';
 			}
-			echo("Hi " . $_SESSION['username'] . "\n");
+			//echo("Hi " . $_SESSION['username'] . "\n");
 			include_once "views/User_admin.vue.php";
 		}
 		
@@ -261,7 +261,7 @@
 			} else {
 				$displayBtn = '';
 			}
-			echo("Hi " . $_SESSION['username'] . "\n");
+			//echo("Hi " . $_SESSION['username'] . "\n");
 			include_once "views/newUser.php";
 		}
 		
@@ -284,7 +284,7 @@
 			} else {
 				$displayBtn = '';
 			}
-			echo("Hi " . $_SESSION['username'] . "\n");
+			//echo("Hi " . $_SESSION['username'] . "\n");
 			include_once "views/confirmDeleteUser.php";
 		}
 		
@@ -319,7 +319,7 @@
 			} else {
 				$displayBtn = '';
 			}
-			echo("Hi " . $_SESSION['username'] . "\n");
+			//echo("Hi " . $_SESSION['username'] . "\n");
 			
 			$is_set =
 				isset($_POST['username']) &&
@@ -341,7 +341,7 @@
         public function editInvoice()
         {
             session_start();
-            if (!($_SESSION['role'] === 'admin' || 'moderator')) {
+            if (!($_SESSION['role'] === 'admin')) {
                 header("location: dashboard");
                 exit();
             }
@@ -416,9 +416,7 @@
 
 			include_once "views/invoicesList.vue.php";
 		}
-		//echo ("Hi ".$_SESSION['login']."\n");
-		require "views/dashboard.php";
-	}
+
 	
 		// #Admin added by Abdelilah
 		// #ADMIN ..........................................................................................//
@@ -432,6 +430,7 @@
 		
 		public function addNewPerson() {
 			//echo '<pre>' . print_r($_POST, true) . '</pre>';
+
 			if (isset($_POST['btn-create-person'])) {
 				$person = new PersonModel();
 				
@@ -525,6 +524,10 @@
 		
 		public function editCompany($id) {
 			//echo '<pre>' . print_r($_POST, true) . '</pre>';
+            if (!($_SESSION['role'] === 'admin')) {
+                header("location: ../dashboard");
+                exit();
+            }
 			if (isset($_POST['btn-save-company'])) {
 				
 				$company2 = new CompanyModel();
@@ -553,6 +556,10 @@
 		// delete company
 		public function deleteCompany($id) {
 			//echo '<pre>' . print_r($_POST, true) . '</pre>';
+            if (!($_SESSION['role'] === 'admin')) {
+                header("location: ../dashboard");
+                exit();
+            }
 			if (isset($_POST['btn-delete-company'])) {
 				
 				$company = new CompanyModel();
@@ -584,6 +591,10 @@
 		// Update Contact
 		public function editContact($id) {
 			//echo '<pre>' . print_r($_POST, true) . '</pre>';
+            if (!($_SESSION['role'] === 'admin')) {
+                header("location: ../dashboard");
+                exit();
+            }
 			if (isset($_POST['btn-save-contact'])) {
 				$this->contactModel = new PersonModel();
 				
@@ -606,6 +617,10 @@
 		// delete contact
 		public function deleteContact($id) {
 			//echo '<pre>' . print_r($_POST, true) . '</pre>';
+            if (!($_SESSION['role'] === 'admin')) {
+                header("location: ../dashboard");
+                exit();
+            }
 			if (isset($_POST['btn-delete-contact'])) {
 				
 				$contact = new PersonModel();

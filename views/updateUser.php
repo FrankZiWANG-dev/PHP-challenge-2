@@ -26,4 +26,6 @@
         </select>
     </label>
     <input type="submit" name="submit">
+    <button><a href="users">Cancel</a></button>
 </form>
+<?php require 'views/parts/footer.php'; ?>

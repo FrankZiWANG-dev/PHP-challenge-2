@@ -19,6 +19,9 @@
             <td><?= $userData['email']?></td>
             <td><?= $userData['role']?></td>
             <td><button><a href="deleteUser&id=<?= $userData['id'] ?>">YES</a></button></td>
+            <td><button><a href="users">Cancel</a></button></td>
         </tr>
     </tbody>
 </table>
+
+<?php require 'views/parts/footer.php'; ?>

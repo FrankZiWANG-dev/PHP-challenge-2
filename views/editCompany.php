@@ -1,5 +1,5 @@
 <?php
-	require 'views/parts/header.php';
+	require_once 'views/parts/header.php';
 	require_once 'src/Helpers/Country.php';
 	require_once 'src/Helpers/Helper.php';
 ?>
@@ -66,6 +66,6 @@
 		</div>
 	</section>
 </main>
-<?php echo '<br/>'; ?>
+<?php //echo '<br/>'; ?>
 <?php require 'views/parts/footer.php';?>
 

@@ -1,5 +1,4 @@
-
-<?php require 'views\parts\headerlogin.php'; ?>
+<?php require 'views/parts/headerlogin.php'; ?>
 
 <main>
 	<form name="frm-login" id="frm-login"  action="" method="POST">
@@ -14,4 +13,3 @@
 			<input class="btn-login" type="submit" id="btn-login" name="btn-login">
 	</form>
 </main>
-	

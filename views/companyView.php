@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Companies</title>
-</head>
-<body>
-
-<nav> Placeholder Nav</nav>
-<br>
+<?php require 'views/parts/header.php'; ?>
 
 <h1> Companies </h1>
 <table>
@@ -25,8 +14,8 @@
         require_once "controllers/controller.php";
         foreach($companyView as $company) { 
             echo "<tr>"
-                ."<td><a href='companyDetail/" .$company["id"] ."'>" .$company["id"] ."</a></td>"
-                ."<td>" .$company["name"] ."</td>"
+                ."<td>" .$company["id"] ."</td>"
+                ."<td><a href='companyDetail/" .$company["id"] ."'>" .$company["name"] ."</a></td>"
                 ."<td>" .$company["country"] ."</td>"
                 ."<td>" .$company["vat"] ."</td>"
                 ."<td>";
@@ -41,8 +30,4 @@
 
     ?>
 </table>
-    
-<br>
-<footer> Placeholder Footer </footer>
-</body>
-</html>
+<?php require 'views/parts/footer.php'; ?>

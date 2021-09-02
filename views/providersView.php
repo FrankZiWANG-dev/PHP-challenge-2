@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Providers</title>
-</head>
-<body>
-
-<nav> Placeholder Nav</nav>
-<br>
+<?php require 'views/parts/header.php';?>
 
 <h1> Providers </h1>
 <table>
@@ -24,8 +13,8 @@
         require_once "controllers/controller.php";
         foreach($providersView as $provider) { 
             echo "<tr>"
-                ."<td><a href='providersDetail/" .$provider["id"]."'>" .$provider["id"] ."</a></td>"
-                ."<td>" .$provider["name"] ."</td>"
+                ."<td>" .$provider["id"] ."</td>"
+                ."<td><a href='providersDetail/" .$provider["id"]."'>" .$provider["name"] ."</a></td>"
                 ."<td>" .$provider["country"] ."</td>"
                 ."<td>" .$provider["vat"] ."</td>"
                 ."</td></tr>";
@@ -33,8 +22,4 @@
 
     ?>
 </table>
-    
-<br>
-<footer> Placeholder Footer </footer>
-</body>
-</html>
+<?php require 'views/parts/footer.php';?>

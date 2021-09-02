@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Providers</title>
-</head>
-<body>
+<?php require 'views/parts/header.php';?>
 
-<nav> Placeholder Nav</nav>
-<br>
 
 <h1> Provider details </h1>
 <h2> Provider info </h2>
@@ -45,7 +35,4 @@
     ?>
 </table>
 
-<br>
-<footer> Placeholder Footer </footer>
-</body>
-</html>
+<?php require 'views/parts/footer.php';?>

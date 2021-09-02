@@ -111,3 +111,7 @@
 	} catch (RouterException $e) {
 	    echo $e->getMessage();
 	}
+//
+//    echo '<pre>';
+//    print_r($_SESSION);
+//    echo '<pre>';

@@ -33,3 +33,5 @@
     <?php } ?>
     </tbody>
 </table>
+
+<?php require 'views/parts/footer.php'; ?>

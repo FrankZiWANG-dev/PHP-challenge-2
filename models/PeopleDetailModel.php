@@ -14,7 +14,7 @@ include_once "src/Config/Database.php";
 		}
 		
         private function selectPeopleDetail($id){
-            $sql = "SELECT person.id, person.firstname, person.lastname, person.email, company.name FROM person INNER JOIN company ON person.company_id = company.id WHERE person.id = $id";
+            $sql = "SELECT person.id, person.firstname, person.lastname, person.email, company.name FROM person INNER JOIN company ON person.company_id = company.id WHERE person.id = ?";
 
             $stmt = $this->pdo->prepare($sql);
 			
@@ -32,7 +32,7 @@ include_once "src/Config/Database.php";
 		}
 
 		private function selectPeopleInvoices($id){
-            $sql2 = "SELECT * FROM invoice WHERE person_id = $id ORDER BY date ASC";
+            $sql2 = "SELECT * FROM invoice WHERE person_id = ? ORDER BY date ASC";
 
             $stmt2 = $this->pdo->prepare($sql2);
 			

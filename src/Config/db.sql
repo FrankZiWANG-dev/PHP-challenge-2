@@ -171,9 +171,9 @@ CREATE TABLE `user` (
 -- Content of table `user`
 --
 INSERT INTO `user` (`id`, `login`, `password`, `email`, `role`) VALUES
-    (1, 'jean-christian', 'ranu', 'jean-christianranu@gmail.com', 'admin'),
-    (2, 'muriel', 'moderator', 'murielmoderator@gmail.com', 'moderator'),
-    (3, 'simple-user', 'user', 'jean-user@gmail.com', 'user');
+    (1, 'Jean-Christian', '$2y$10$txlBf/ZRI1hYoFcRMoJVpO21XhU9pFkHGkyOadwRi5A.iMkIWtRYC', 'jean-christianranu@gmail.com', 'admin'),
+    (2, 'Muriel', '$2y$10$UZG6WEkbZdvv9SDcl/ALV.XmkPCJAo7Y6pU6jp2IoIna4wxsKVpZ.', 'murielmoderator@gmail.com', 'moderator'),
+    (3, 'User', '$2y$10$Zo9otfSJLi6Jb/Ec6vHJyumBnNvs8rAMCGCijlqZAiOmdQ0PubLue', 'jean-user@gmail.com', 'user');
 -- --------------------------------------------------------
 
 

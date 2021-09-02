@@ -13,7 +13,7 @@
     <tbody>
     <?php foreach ($invoicesList as $invoice){ ?>
         <tr>
-            <td><?= $invoice['invoice_number']?></td>
+            <td><a href="editInvoice&id=<?=$invoice['invoice_id']?>"><?= $invoice['invoice_number']?></a></td>
             <td><?= $invoice['invoice_date']?></td>
             <td><?= $invoice['company_name']?></td>
             <td><?= $invoice['company_type']?></td>
@@ -28,3 +28,5 @@
     <?php } ?>
     </tbody>
 </table>
+
+<?php require_once 'views/parts/footer.php'; ?>

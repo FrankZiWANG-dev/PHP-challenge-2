@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client detail</title>
-</head>
-<body>
-
-<nav> Placeholder Nav</nav>
-<br>
+<?php require 'views/parts/header.php';?>
 
 <h1> Client contacts </h1>
 
@@ -40,9 +29,4 @@ for ($x=0, $y=1; $x<sizeof($clientsDetailView); $x++, $y++){
          
 }
 ?>
-
-
-<br>
-<footer> Placeholder Footer </footer>
-</body>
-</html>
+<?php require 'views/parts/footer.php';?>
