@@ -1,7 +1,7 @@
 <?php require 'views/parts/headerlogin.php'; ?>
 
 <main>
-	<form name="frm-login" id="frm-login"  action="" method="POST">
+	<form class="addForm" name="frm-login" id="frm-login"  action="" method="POST">
 		<div class="login">
 			<label for="login">Login</label>
 			<input type="text" class="form-control" id="login" name="login" placeholder="login">

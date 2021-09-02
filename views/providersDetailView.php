@@ -7,15 +7,15 @@
     <?php 
         include_once "models/ProvidersDetailModel.php";
         require_once "controllers/controller.php";
-        echo "<tr><td>Name: </td><td>" .$providersDetailView["name"] ."</td></tr>"
-            ."<tr><td>VAT Number: </td><td>" .$providersDetailView["vat"] ."</td>";
+        echo "<tr><td class='tableHead'>Name: </td><td>" .$providersDetailView["name"] ."</td></tr>"
+            ."<tr><td class='tableHead'>VAT Number: </td><td>" .$providersDetailView["vat"] ."</td>";
     ?>
 </table>
     
 <h2> Invoices </h2>
 <table>
     <?php
-        echo "<tr><td>Number</td><td>Date</td></tr>";
+        echo "<tr class='tableHead'><td>Number</td><td>Date</td></tr>";
         foreach($providersInvoicesView as $providersInvoice) { 
                 echo "<tr><td>" .$providersInvoice["number"] ."</td>"
                     ."<td>" .$providersInvoice["date"] ."</td></tr>";
@@ -26,7 +26,7 @@
 <h2> Contacts </h2>
 <table>
     <?php
-        echo "<tr><td>First name</td><td>Last name</td><td>Email</td></tr>";
+        echo "<tr class='tableHead'><td>First name</td><td>Last name</td><td>Email</td></tr>";
         foreach($providersContactsView as $providersContact) { 
                 echo "<tr><td>" .$providersContact["firstname"] ."</td>"
                     ."<td>" .$providersContact["lastname"] ."</td>"

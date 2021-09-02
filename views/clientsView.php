@@ -2,12 +2,13 @@
 
 <h1> Clients </h1>
 <table>
-    <tr>
-        <td>Id</td>
-        <td>Name</td>
-        <td>Country</td>
-        <td>VAT</td>
-    </tr>
+    <thead class="tableHead">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Country</th>
+        <th>VAT</th>
+    </thead>
+    <tbody>
     <?php 
         foreach($clientsView as $client) { 
             echo "<tr>"
@@ -18,5 +19,6 @@
         }
 
     ?>
+    </tbody>
 </table>
 <?php require 'views/parts/footer.php';?>

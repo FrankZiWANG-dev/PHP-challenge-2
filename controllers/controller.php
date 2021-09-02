@@ -235,7 +235,7 @@
 			$usersData = $users->displayUsers();
 			
 			if ($_SESSION['role'] == 'admin') {
-				$displayBtn = '<button><a href="newUser">Create new user</a></button>';
+				$displayBtn = '<button class="buttonAdd"><a href="newUser">Create new user</a></button>';
 			} else {
 				$displayBtn = '';
 			}
@@ -255,13 +255,6 @@
 			$users = new User();
 			$users->newUser();
 			
-			
-			if ($_SESSION['role'] == 'admin') {
-				$displayBtn = '<button><a href="newUser">Create new user</a></button>';
-			} else {
-				$displayBtn = '';
-			}
-			//echo("Hi " . $_SESSION['username'] . "\n");
 			include_once "views/newUser.php";
 		}
 		

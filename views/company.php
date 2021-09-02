@@ -3,23 +3,23 @@
   require_once 'src/Helpers/Country.php';
 ?>
 
-<main class="">
-	<section id="">
-		<div id="title" class="">
-			<h1>Adding company</h1>
+<main>
+	<section >
+		<div>
+			<h1>Create a new company</h1>
 		</div>
 	</section>
-	<section class="">
-		<div id="add-person-request">
+	<section >
+		<div class="addForm">
 			<form name="frm-add-company" id="frm-add-company"  action="" method="POST">
-				<p class="mandatory">[ <span class="red">*</span> Indicates mandatory fields ]</p>
-				<div class="mt-24">
+				<p>[ <span class="red">*</span> Mandatory fields ]</p>
+				<div class="marginTop">
 					<label for="name">Name</label><span class="red">* </span>
 					<input type="text" class="" id="name" name="name" placeholder="company name"
 								 value="<?php if(isset($_POST['name'])){ echo htmlentities($_POST['name']);}?>"
 					>
 				</div>
-				<div class="mt-24">
+				<div class="marginTop">
 					<label for="country">Country</label><span class="red">* </span>
 					<select class="" name="country" id="country">
                         <?php foreach ($countries as $k => $v) { ?>
@@ -27,15 +27,15 @@
                         <?php } ?>
 					</select>
 				</div>
-				<div class="mt-24">
+				<div class="marginTop">
 					<label for="vat">Vat</label><span class="red">* </span>
 					<input type="text" class="form-control" id="vat" name="vat" placeholder="vat"
 								 value="<?php if(isset($_POST['vat'])){ echo $_POST['vat'];}?>"
 					>
 				</div>
-				<div class="mt-24">
+				<div class="marginTop">
 					<label for="type">Type</label><span class="red">* </span>
-					<select class="" name='type' id="type">
+					<select name='type' id="type">
 						<?php foreach ($types as $type) {
 							echo "<option value='".$type['id']."'>".$type['type']."</option>";
 						} ?>
@@ -43,13 +43,13 @@
 				</div>
 				
 				
-				<input class="mt-24" type="submit" id="btn-create-company" name="btn-create-company" value="Create">
-                <input type="button" onclick="window.location.href = 'dashboard';" value="Cancel"/>
+				<input class="marginTop buttonAdd" type="submit" id="btn-create-company" name="btn-create-company" value="Create">
+                <input class="buttonAdd" type="button" onclick="window.location.href = 'dashboard';" value="Cancel"/>
 				
-				<div class="error mt-16"><?php if(isset($error)) { echo $error; } ?></div>
+				<div><?php if(isset($error)) { echo $error; } ?></div>
 			</form>
 		</div>
 	</section>
 </main>
-<?php echo '<br/>'; ?>
+
 <?php require 'views/parts/footer.php';?>

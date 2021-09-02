@@ -14,8 +14,8 @@ for ($x=0, $y=1; $x<sizeof($clientsDetailView); $x++, $y++){
     echo "<tr><td>First name: </td><td>".$clientsDetailView[$x]["firstname"] ."</td></tr>"
          ."<tr><td>Last name: </td><td>".$clientsDetailView[$x]["lastname"] ."</td></tr>"
          ."<tr><td>Email: </td><td>".$clientsDetailView[$x]["email"] ."</td></tr>"
-         ."<tr><td>Invoices: </td><td>"
-            ."<table><tr><td>Number</td><td>Date</td></tr>";
+         ."<tr><td>Invoices (Number/Date): </td><td>"
+            ."<table class='clientDetailInvoices'>";
    
     for ($i=0; $i<sizeof($clientsInvoicesView); $i++){
         if ($clientsInvoicesView[$i]["person_id"]==$clientsDetailView[$x]["id"]){

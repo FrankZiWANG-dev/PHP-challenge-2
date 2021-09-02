@@ -1,13 +1,10 @@
 <?php require 'views/parts/header.php'; ?>
 
-<span>
-      <?=$displayBtn?>
-</span>
-
+ <h1>List of users</h1>
 <table>
-    <caption>List of users</caption>
+   
     <thead>
-        <tr>
+        <tr class='tableHead'>
             <th>User Name</th>
             <th>E-mail</th>
             <th>Role</th>
@@ -33,5 +30,9 @@
     <?php } ?>
     </tbody>
 </table>
+
+<span>
+      <?=$displayBtn?>
+</span>
 
 <?php require 'views/parts/footer.php'; ?>

@@ -4,29 +4,29 @@
 	require_once 'src/Helpers/Helper.php';
 ?>
 
-<main class="">
-	<section id="">
-		<div id="title" class="">
-			<h1>Updating company</h1>
+<main>
+	<section>
+		<div id="title">
+			<h1>Update company: <?php echo $company[0]['name']?></h1>
 		</div>
 	</section>
-	<section class="">
+	<section class="addForm">
 		<div id="add-person-request">
 			<form name="frm-add-company" id="frm-add-company"  action="" method="POST">
-				<p class="mandatory">[ <span class="red">*</span> Indicates mandatory fields ]</p>
+				<p>[ <span class="red">*</span> Indicates mandatory fields ]</p>
                 <input type="hidden" id="company_id" name="company_id" value="<?= $company[0]['id'];?>">
-				<div class="mt-24">
+				<div class="marginTop">
 					<label for="name">Name</label><span class="red">* </span>
-					<input type="text" class="" id="name" name="name" placeholder="company name"
+					<input type="text" id="name" name="name" placeholder="company name"
                          value="<?php
                                    if(isset($_POST['name'])) { echo htmlentities($_POST['name']);}
                                    else { echo $company[0]['name']; }
                                 ?>"
 					>
 				</div>
-				<div class="mt-24">
+				<div class="marginTop">
 					<label for="country">Country</label><span class="red">* </span>
-					<select class="" name="country" id="country">
+					<select name="country" id="country">
 						<?php foreach ($countries as $k => $v) { ?>
 							<option value="<?= $v; ?>"
                               <?php if ($v === $company[0]['country']) { echo 'selected="selected"'; }  ?> >
@@ -35,13 +35,13 @@
 						<?php } ?>
 					</select>
 				</div>
-				<div class="mt-24">
+				<div class="marginTop">
 					<label for="vat">Vat</label><span class="red">* </span>
 					<input type="text" class="form-control" id="vat" name="vat" placeholder="vat"
 								 value="<?php if(isset($_POST['vat'])){ echo $_POST['vat'];} else { echo $company[0]['vat'];} ?>"
 					>
 				</div>
-				<div class="mt-24">
+				<div class="marginTop">
 					<label for="type">Type</label><span class="red">* </span>
 					<select class="" name='type' id="type">
 						<?php foreach ($types as $type) { ?>
@@ -54,18 +54,18 @@
 				
 				
 				<?php if($action == "update") { ?>
-                    <input class="mt-24" type="submit" id="btn-save-company" name="btn-save-company" value="Save">
+                    <input class="marginTop" type="submit" id="btn-save-company" name="btn-save-company" value="Save">
                 <?php } else { ?>
-                    <input class="mt-24" type="submit" id="btn-delete-company" name="btn-delete-company" value="Delete"
+                    <input class="marginTop" type="submit" id="btn-delete-company" name="btn-delete-company" value="Delete"
                            onclick="if (!confirm('Are you sure?')) { return false }">
                 <?php } ?>
-				<input type="button" onclick="window.location.href = '../dashboard';" value="Cancel"/>
+				<input style="buttonAdd" type="button" onclick="window.location.href = '../dashboard';" value="Cancel"/>
 				
-				<div class="error mt-16"><?php if(isset($error)) { echo $error; } ?></div>
+				<div><?php if(isset($error)) { echo $error; } ?></div>
 			</form>
 		</div>
 	</section>
 </main>
-<?php //echo '<br/>'; ?>
+
 <?php require 'views/parts/footer.php';?>
 

@@ -1,8 +1,9 @@
 <?php require_once 'views/parts/header.php'; ?>
 
+<h1>Invoices</h1>
+
 <table>
-    <caption>List of invoices</caption>
-    <thead>
+    <thead class="tableHead">
     <tr>
         <th>Invoice number</th>
         <th>Invoice Date</th>

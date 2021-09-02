@@ -1,8 +1,8 @@
 <?php require 'views/parts/header.php'; ?>
 
-<h1> People </h1>
+<h1> Contacts </h1>
 <table>
-    <tr>
+    <tr class="tableHead">
         <td>Id</td>
         <td>Name</td>
         <td>Email</td>

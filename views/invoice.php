@@ -1,29 +1,29 @@
 <?php require 'views/parts/header.php';?>
 
-<main class="">
+<main>
     <section id="">
         <div id="title" class="">
-            <h1>Adding invoice</h1>
+            <h1>Create a new invoice</h1>
         </div>
     </section>
-    <section class="">
-        <div id="add-person-request">
+    <section class="addForm">
+        <div>
             <form name="frm-add-invoice" id="frm-add-invoice"  action="" method="POST">
-                <p class="mandatory">[ <span class="red">*</span> Indicates mandatory fields ]</p>
-                <div class="mt-24">
+                <p>[ <span class="red">*</span> Indicates mandatory fields ]</p>
+                <div class="marginTop">
                     <label for="invoice_number">Number</label><span class="red">* </span>
                     <input type="text" class="" id="invoice_number" name="invoice_number" placeholder="number"
                            onkeyup="prependF(this)"
                            value="<?php if(isset($_POST['invoice_number'])){ echo htmlentities($_POST['invoice_number']);}?>"
                     >
                 </div>
-                <div class="mt-24">
+                <div class="marginTop">
                     <label for="invoice_date">Date</label><span class="red">* </span>
                     <input type="text" class="form-control" id="invoice_date" name="invoice_date" placeholder="date" readonly="true"
                            value="<?php if(isset($_POST['invoice_date'])){ echo $_POST['invoice_date'];}?>"
                     >
                 </div>
-                <div class="mt-24">
+                <div class="marginTop">
                     <label for="company">Company</label><span class="red">* </span>
                     <select name='company'>
                         <?php foreach ($companies as $company) {
@@ -31,7 +31,7 @@
                         } ?>
                     </select>
                 </div>
-                <div class="mt-24">
+                <div class="marginTop">
                     <label for="person">Person</label><span class="red">* </span>
                     <select name='person'>
                         <?php foreach ($persons as $person) {
@@ -41,10 +41,10 @@
                 </div>
 
 
-                <input class="mt-24" type="submit" id="btn-create-invoice" name="btn-create-invoice" value="Create">
-                <input type="button" onclick="window.location.href = 'dashboard';" value="Cancel"/>
+                <input class="buttonAdd marginTop" type="submit" id="btn-create-invoice" name="btn-create-invoice" value="Create">
+                <input class="buttonAdd" type="button" onclick="window.location.href = 'dashboard';" value="Cancel"/>
 
-                <div class="error mt-16"><?php if(isset($error)) { echo $error; } ?></div>
+                <div><?php if(isset($error)) { echo $error; } ?></div>
             </form>
         </div>
     </section>

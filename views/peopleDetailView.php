@@ -1,6 +1,6 @@
 <?php require 'views/parts/header.php'; ?>
 
-<h1> Person detail</h1>
+<h1> Contact detail</h1>
 
 <table>
 
@@ -9,13 +9,13 @@
 include_once "models/PeopleDetailModel.php";
 require_once "controllers/controller.php";
 
-echo "<tr><td>Id: </td><td>" .$peopleDetailView['id'] ."</td></tr>"
-    ."<tr><td>First name: </td><td>" .$peopleDetailView['firstname'] ."</td></tr>"
-    ."<tr><td>Last name: </td><td>" .$peopleDetailView['lastname'] ."</td></tr>"
-    ."<tr><td>Email: </td><td>" .$peopleDetailView['email'] ."</td></tr>"
-    ."<tr><td>Company: </td><td>" .$peopleDetailView['name'] ."</td></tr>"
-    ."<tr><td>Invoices: </td><td>"
-    ."<table><tr><td>Number </td><td>Date </td></tr>";
+echo "<tr><td class='tableHead'>Id: </td><td>" .$peopleDetailView['id'] ."</td></tr>"
+    ."<tr><td class='tableHead'>First name: </td><td>" .$peopleDetailView['firstname'] ."</td></tr>"
+    ."<tr><td class='tableHead'>Last name: </td><td>" .$peopleDetailView['lastname'] ."</td></tr>"
+    ."<tr><td class='tableHead'>Email: </td><td>" .$peopleDetailView['email'] ."</td></tr>"
+    ."<tr><td class='tableHead'>Company: </td><td>" .$peopleDetailView['name'] ."</td></tr>"
+    ."<tr><td class='tableHead'>Invoices (Number / Date): </td><td>"
+    ."<table>";
     
 foreach($peopleInvoicesView as $peopleInvoice) { 
     echo "<tr><td>" .$peopleInvoice["number"] ."</td>"

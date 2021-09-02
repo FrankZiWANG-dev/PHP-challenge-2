@@ -2,7 +2,7 @@
 
 <h1> Companies </h1>
 <table>
-    <tr>
+    <tr class="tableHead">
         <td>Id</td>
         <td>Name</td>
         <td>Country</td>

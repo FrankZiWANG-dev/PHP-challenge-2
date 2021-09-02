@@ -7,7 +7,7 @@
 <table>
     <caption>Do you want to delete this user ?</caption>
     <thead>
-    <tr>
+    <tr class='tableHead'>
         <th>User Name</th>
         <th>E-mail</th>
         <th>Role</th>
@@ -18,8 +18,8 @@
             <td><?= $userData['login']?></a></td>
             <td><?= $userData['email']?></td>
             <td><?= $userData['role']?></td>
-            <td><button><a href="deleteUser&id=<?= $userData['id'] ?>">YES</a></button></td>
-            <td><button><a href="users">Cancel</a></button></td>
+            <td><button class='BtnDelete'><a href="deleteUser&id=<?= $userData['id'] ?>">YES</a></button></td>
+            <td><button class='BtnDelete'><a href="users">Cancel</a></button></td>
         </tr>
     </tbody>
 </table>

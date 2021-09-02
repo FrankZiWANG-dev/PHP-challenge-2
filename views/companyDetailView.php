@@ -5,15 +5,15 @@
 <h2> Company </h2>
 <table>
     <?php 
-        echo "<tr><td>Name: </td><td>" .$companyDetailView[0]["name"] ."</td></tr>"
-            ."<tr><td>VAT Number: </td><td>" .$companyDetailView[0]["vat"] ."</td></tr>";
+        echo "<tr><td class='tableHead'>Name: </td><td>" .$companyDetailView[0]["name"] ."</td></tr>"
+            ."<tr><td class='tableHead'>VAT Number: </td><td>" .$companyDetailView[0]["vat"] ."</td></tr>";
     ?>
 </table>
     
 <h2> Invoices </h2>
 <table>
     <?php
-        echo "<tr><td>Number</td><td>Date</td></tr>";
+        echo "<tr class='tableHead'><td>Number</td><td>Date</td></tr>";
         for ($i=0;$i<sizeof($companyInvoicesView);$i++) { 
                 echo "<tr><td>" .$companyInvoicesView[$i]["number"] ."</td>"
                     ."<td>" .$companyInvoicesView[$i]["date"] ."</td></tr>";
@@ -24,7 +24,7 @@
 <h2> Contacts </h2>
 <table>
     <?php
-        echo "<tr><td>First name</td><td>Last name</td><td>Email</td></tr>";
+        echo "<tr class='tableHead'><td>First name</td><td>Last name</td><td>Email</td></tr>";
         for ($i=0; $i<sizeof($companyContactsView); $i++) { 
                 echo "<tr><td>" .$companyContactsView[$i]["firstname"] ."</td>"
                     ."<td>" .$companyContactsView[$i]["lastname"] ."</td>"

@@ -6,7 +6,7 @@
       		<?php if ($_SESSION['role'] == 'admin') { ?>
                 <button type="button" name="addInvoice"><a href="create-invoice">Add invoice</a></button>
                 <button type="button" name="addCompany"><a href="create-company">Add company</a></button>
-                <button type="button" name="addPerson"><a href="create-person">Add person</a></button>
+                <button type="button" name="addPerson"><a href="create-person">Add contact</a></button>
             <?php } ?>
 		</span>
 	</div>
