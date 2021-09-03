@@ -5,13 +5,10 @@ This project is a mock invoicing system for a fake company, created during our w
 ## Accessing the project (IMPORTANT!)
 ### Links
 Here is the link to the project itself:
-PLACEHOLDER LINK.
+https://cogip-crm.000webhostapp.com/
 
 Here is the link to the mockup:
 https://www.canva.com/design/DAEoBXeGdrw/nox0rUSXby_oUc9020YtUw/watch?utm_content=DAEoBXeGdrw&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton.
-
-Here are the results of the Lighthouse test:
-![Lighthouse](./assets/img/lighthouse.JPG)
 
 ### Log in
 To access the website, you must first log in.
