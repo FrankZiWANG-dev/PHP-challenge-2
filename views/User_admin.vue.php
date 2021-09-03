@@ -31,8 +31,8 @@
     </tbody>
 </table>
 
-<span>
+<div class="buttonadd">
       <?=$displayBtn?>
-</span>
+</div>
 
 <?php require 'views/parts/footer.php'; ?>

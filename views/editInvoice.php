@@ -1,9 +1,9 @@
 <?php require 'views/parts/header.php'; ?>
-<main>
-    <section>
-            <h1> Update invoice </h1>
-    </section>
-    <section class="addForm">
+
+<h1> Update invoice </h1>
+<main class="addlogin">
+   
+    <section class="addForm login">
         <form method="post">
             <div class="marginTop">
                 <label for="number">
@@ -26,9 +26,11 @@
                     </select>
                 </label>
             </div>
-            <input class ="buttonAdd marginTop" type="submit" name="submit">
-            <input class ="buttonAdd marginTop" type="button" value="Cancel" onclick="window.location.href='invoice'">
+            <div class="btncenter">
+                <input class="btn-login" type="submit" id="btn-create-person" name="btn-create-person" value="Create">
+                <input class="btn-login" type="button" onclick="window.location.href = 'dashboard';" value="Cancel"/>
+                </div>
         </form>
     </section>
-    <?php require 'views/parts/footer.php'; ?>
 </main>
+<?php require 'views/parts/footer.php'; ?>

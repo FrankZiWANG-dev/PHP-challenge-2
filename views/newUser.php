@@ -1,9 +1,9 @@
 <?php require 'views/parts/header.php'; ?>
-<main>
-    <section>
-            <h1> Add new user</h1>
-    </section>
-    <section class="addForm">
+
+<h1> Create new user</h1>
+<main class="addlogin">
+    
+    <section class="addForm login">
         <form method="post">
             <div class="marginTop">
                 <label for="username">
@@ -30,7 +30,10 @@
                     </select>
                 </label>
             </div>
-            <input class="buttonAdd marginTop" type="submit" name="submit">
-        </form>
+            <div class="btncenter">
+                <input class="btn-login" type="submit" id="btn-create-person" name="btn-create-person" value="Create">
+                <input class="btn-login" type="button" onclick="window.location.href = 'users';" value="Cancel"/>
+                </div>
+            </form>
     </section>
 </main>

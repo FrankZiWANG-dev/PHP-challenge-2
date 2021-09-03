@@ -19,7 +19,7 @@ for ($x=0, $y=1; $x<sizeof($clientsDetailView); $x++, $y++){
    
     for ($i=0; $i<sizeof($clientsInvoicesView); $i++){
         if ($clientsInvoicesView[$i]["person_id"]==$clientsDetailView[$x]["id"]){
-            echo "<tr><td>" .$clientsInvoicesView[$i]["number"] ."</td>"
+            echo "<tr class='none'><td>" .$clientsInvoicesView[$i]["number"] ."</td>"
                 ."<td>" .$clientsInvoicesView[$i]["date"] ."</td></tr>";
         }
         

@@ -235,7 +235,7 @@
 			$usersData = $users->displayUsers();
 			
 			if ($_SESSION['role'] == 'admin') {
-				$displayBtn = '<button class="buttonAdd"><a href="newUser">Create new user</a></button>';
+				$displayBtn = '<button class="Btn-add"><a class="btn-lien" href="newUser">Create new user</a></button>';
 			} else {
 				$displayBtn = '';
 			}

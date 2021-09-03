@@ -1,12 +1,10 @@
 <?php require 'views/parts/header.php';?>
 
-<main>
-    <section>
-        <div>
-            <h1>Create a new contact</h1>
-        </div>
-    </section>
-    <section class="addForm">
+<h1>Create a new contact</h1>
+
+<main class="addlogin" >
+    
+    <section class="addForm login">
         <div id="add-person-request">
             <form name="frm-add-person" id="frm-add-person"  action="" method="POST">
                 <p>[ <span class="red">*</span> Indicates mandatory fields ]</p>
@@ -36,10 +34,10 @@
                         } ?>
                     </select>
                 </div>
-                
-
-                <input class="marginTop buttonAdd" type="submit" id="btn-create-person" name="btn-create-person" value="Create">
-                <input class="buttonAdd" type="button" onclick="window.location.href = 'dashboard';" value="Cancel"/>
+                <div class="btncenter">
+                <input class="btn-login" type="submit" id="btn-create-person" name="btn-create-person" value="Create">
+                <input class="btn-login" type="button" onclick="window.location.href = 'dashboard';" value="Cancel"/>
+                </div>
 
                 <div><?php if(isset($error)) { echo $error; } ?></div>
             </form>

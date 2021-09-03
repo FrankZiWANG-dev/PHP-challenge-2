@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -17,7 +17,7 @@
 
 <!--    <link rel="shortcut icon" href="favicon-32x32.png">-->
 <!--    <link rel="stylesheet" href="assets/css/style.css">-->
-<!--    <!--<link rel="stylesheet" href="/assets/css/reset.css">-->
+<!--    <link rel="stylesheet" href="/assets/css/reset.css">-->
 <!--    <title>COGIP Web App</title>-->
 <!--</head>-->
 <body>

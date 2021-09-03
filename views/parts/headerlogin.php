@@ -19,9 +19,9 @@
 </head>
 <body>
 <!-- MENU -->
-<nav class="navheader">
+<nav class="navheader2">
     <!-- Brand -->
- <span class="logologin"><a href="dashboard"><img src="assets/img/logocogip2.png" alt="logo"></a></span>
+ <a href="dashboard"><img src="assets/img/logocogip2.png" class="logologin" alt="logo"></a>
  
 </nav>
 <h1>Welcome to the login area !</h1> 

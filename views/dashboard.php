@@ -1,21 +1,19 @@
 <?php require 'views/parts/header.php'; ?>
 
 <section>
-	<div class="Btn-add">
-    	<span>
-      		<?php if ($_SESSION['role'] == 'admin') { ?>
-                <button type="button" name="addInvoice"><a href="create-invoice">Add invoice</a></button>
-                <button type="button" name="addCompany"><a href="create-company">Add company</a></button>
-                <button type="button" name="addPerson"><a href="create-person">Add contact</a></button>
+	<div class="buttonadd">
+    	<?php if ($_SESSION['role'] == 'admin') { ?>
+                <button type="button" name="addInvoice" class="Btn-add"><a class="btn-lien" href="create-invoice">Add invoice</a></button>
+                <button type="button" name="addCompany" class="Btn-add"><a class="btn-lien" href="create-company">Add company</a></button>
+                <button type="button" name="addPerson" class="Btn-add"><a class="btn-lien" href="create-person">Add contact</a></button>
             <?php } ?>
-		</span>
 	</div>
 		<div>
         <h2><a href="companies">Companies</a></h2>
-            <h3>
+            <h4>
                 <a class="nav-link" href="clients">Clients</a> /
                 <a class="nav-link" href="providers">Providers</a>
-            </h3>
+            </h4>
 				<table >
 					<caption>List of last five companies</caption>
 					<tr>
