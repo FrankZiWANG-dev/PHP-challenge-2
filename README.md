@@ -62,6 +62,6 @@ After regrouping the code, further styling was added (using CSS), the applicatio
 
 ## Bugs
 Website can be slow to boot, due to webhosting server.
-Google Chrome indicates dangerous page when clicking on Invoices.
+Google Chrome can indicate dangerous page when clicking on Invoices.
 Form remains uncentered when updating / deleting an entry.
 Currently, can only delete and update through dashboard (= last 5 entries of each category).
