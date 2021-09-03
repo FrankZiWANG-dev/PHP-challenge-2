@@ -59,3 +59,9 @@ After regrouping the code, further styling was added (using CSS), the applicatio
       - Team management (workload distribution, deadline management)
       - Source control
       - Companies, clients, providers display functionalities creation
+
+## Bugs
+Website can be slow to boot, due to webhosting server.
+Google Chrome indicates dangerous page when clicking on Invoices.
+Form remains uncentered when updating / deleting an entry.
+Currently, can only delete and update through dashboard (= last 5 entries of each category).
